@@ -15,6 +15,7 @@ class akunsaya extends CI_Controller
     public function index()
     {
         $data['title'] = "Profile Account";
+        // var_dump();
 
         $dataPenunjuk = array('email'=>$this->session->userdata('email'));
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
@@ -24,16 +25,75 @@ class akunsaya extends CI_Controller
         $tempVar = $this->scsc->getData("profil",array('name'=>'singkatan'));
         $tempVar = $tempVar[0]["value"];
         $data['singkatan'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("mainsidebar",array('status'=>1));
+        // $tempVar = $tempVar[0]["value"];
+        $data['header'] = $tempVar;
+        // var_dump($data['header']);
+
+        $tempVar = $this->scsc->getAll("sidebarcategory");
+        // $tempVar = $tempVar[0]["value"];
+        $data['menu'] = $tempVar;
+        // var_dump($data['menu']);
+
+        $tempVar = $this->scsc->getData("sidebar",array('status'=>1));
+        // $tempVar = $tempVar[0]["value"];
+        $data['submenu'] = $tempVar;
         
         $data['email'] = $this->session->userdata('status');
         $data['role'] = $this->session->userdata('role');
+        $data['active'] = 1;
         $this->load->view('akun/header', $data);
         $this->load->view('akun/top', $data);
         $this->load->view('akun/home');
-        $this->load->view('akun/sidebar');
+        $this->load->view('akun/sidebar', $data);
         $this->load->view('akun/footer');
     }
+    
+    public function dashboard()
+    {
+        redirect('akunsaya');
+    }
+    
+    public function pemberitahuan()
+    {
+        $data['title'] = "Pemberitahuan";
+        // var_dump();
 
+        $dataPenunjuk = array('email'=>$this->session->userdata('email'));
+        $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
+        $tempVar = $tempVar[0]["value"];
+        $data['logo'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("profil",array('name'=>'singkatan'));
+        $tempVar = $tempVar[0]["value"];
+        $data['singkatan'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("mainsidebar",array('status'=>1));
+        // $tempVar = $tempVar[0]["value"];
+        $data['header'] = $tempVar;
+        // var_dump($data['header']);
+        
+        $tempVar = $this->scsc->getAll("sidebarcategory");
+        // $tempVar = $tempVar[0]["value"];
+        $data['menu'] = $tempVar;
+        // var_dump($data['menu']);
+        
+        $tempVar = $this->scsc->getData("sidebar",array('status'=>1));
+        // $tempVar = $tempVar[0]["value"];
+        $data['submenu'] = $tempVar;
+        
+        $data['email'] = $this->session->userdata('status');
+        $data['role'] = $this->session->userdata('role');
+        $data['active'] = 2;
+
+        $this->load->view('akun/header', $data);
+        $this->load->view('akun/top', $data);
+        $this->load->view('akun/home');
+        $this->load->view('akun/sidebar', $data);
+        $this->load->view('akun/footer');
+    }
+    
     public function logout()
     {
         // $this->session->sess_destroy();

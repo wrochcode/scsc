@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <meta name="author-programmer handal" content="SCSC Team">
+  <link rel="icon" type="image/png" href="<?= base_url()?>assets/icon/<?php echo $logo; ?>">
   <!-- <title>Ecommerce Dashboard &mdash; Stisla</title> -->
   <title><?php echo $title; ?></title>
 

@@ -21,4 +21,10 @@ class scsc extends CI_Model
         $res = $this->db->get_where($dataBase, $where);
         return $res->result_array();
     }
+
+    public function getAll($tabel)
+    {
+        $aban = $this->db->get($tabel);
+        return $aban->result_array();
+    }
 }
