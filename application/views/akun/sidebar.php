@@ -1,7 +1,7 @@
 <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html"><?= $singkatan; ?></a>
+                        <a href="<?php echo base_url(); ?>"><?= $singkatan; ?></a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
                         <a href="index.html"><?= $singkatan; ?></a>

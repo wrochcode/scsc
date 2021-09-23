@@ -18,6 +18,6 @@
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Template CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/login/css/style.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/login/css/components.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/login/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/login/css/components.css">
 </head>
