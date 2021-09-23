@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class ScscModel extends CI_Model
+class scsc extends CI_Model
 {
     public function getLogin($data) //dapat session
     {

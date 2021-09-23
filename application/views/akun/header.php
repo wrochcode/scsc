@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/login/css/style.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/login/css/components.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/login/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/login/css/components.css">
 </head>
 

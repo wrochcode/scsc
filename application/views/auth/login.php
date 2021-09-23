@@ -8,7 +8,7 @@
                     <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">SCSC</span></h4>
                     <p class="text-muted">Before you get started, you must login or register if you don't already have an account. Enjoyy..</p>
                     <?php echo $this->session->flashdata('message'); ?>
-                    <form method="POST" action="<?php echo base_url(); ?>Login/login" class="needs-validation" novalidate="">
+                    <form method="POST" action="<?php echo base_url(); ?>login/login" class="needs-validation" novalidate="">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <!-- <input type="username" name="username" placeholder="Masukkan Nama Anda" required/><br> -->
@@ -37,15 +37,15 @@
 
                     <div class="form-group text-right">
                         <a href="auth-forgot-password.html" class="float-left mt-3">
-                        Forgot Password?
+                            Forgot Password?
                         </a>
                         <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">
-                        Login
+                            Login
                         </button>
                     </div>
 
                     <div class="mt-5 text-center">
                         <?php $this->session->sess_destroy();?>
-                        Don't have an account? <a href="<?php echo base_url(); ?>Register">Create new one</a>
+                        Don't have an account? <a href="<?php echo base_url(); ?>register">Create new one</a>
                     </div>
                     </form>

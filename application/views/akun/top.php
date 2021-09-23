@@ -211,7 +211,7 @@
                                 <i class="fas fa-cog"></i> Settings
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="<?php echo base_url('Login/logout'); ?>" class="dropdown-item has-icon text-danger">
+                            <a href="<?php echo base_url(); ?>akunsaya/logout" class="dropdown-item has-icon text-danger">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </div>

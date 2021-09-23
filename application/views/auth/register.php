@@ -106,6 +106,7 @@
                         </div>
 
                         <div class="mt-5 text-center">
-                            Already have an account? <a href="<?php echo base_url(); ?>Login">Log in</a>
+                            <?php $this->session->sess_destroy();?>
+                            Already have an account? <a href="<?php echo base_url(); ?>login">Log in</a>
                         </div>
                     </form>
