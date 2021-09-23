@@ -3,8 +3,8 @@
   <section id="topbar" class="d-none d-lg-block">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i><a href="mailto:<?= $email; ?>"><?= $email; ?></a>
-        <i class="icofont-phone"></i> <?= $telp; ?>
+        <i class="icofont-envelope"></i><a href="mailto:<?= $email; ?>" target="_blank" ><?= $email; ?></a>
+        <i class="icofont-phone"></i> <a href="tel:<?= $telp; ?>" target="_blank" ><?= $telp; ?></a>
       </div>
       <div class="social-links">
         <!-- <a href="https://twitter.com/excel_shelby" class="twitter"><i class="icofont-twitter"></i></a>
@@ -12,11 +12,11 @@
         <a href="https://www.instagram.com/w.roch19/" class="instagram"><i class="icofont-instagram"></i></a>
         <a href="#" class="skype"><i class="icofont-skype"></i></a>
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a> -->
-        <a href="<?= $twitter; ?>" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="<?= $facebook; ?>" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="<?= $instagram; ?>" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="<?= $skype; ?>" class="skype"><i class="icofont-skype"></i></a>
-        <a href="<?= $linkedin; ?>" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+        <a href="<?= $twitter; ?>" target="_blank" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="<?= $facebook; ?>" target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="<?= $instagram; ?>" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="<?= $skype; ?>" target="_blank" class="skype"><i class="icofont-skype"></i></a>
+        <a href="<?= $linkedin; ?>" target="_blank" class="linkedin"><i class="icofont-linkedin"></i></i></a>
       </div>
     </div>
   </section>

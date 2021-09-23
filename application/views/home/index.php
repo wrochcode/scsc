@@ -19,7 +19,7 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background: url(assets/img/slide/slide-2.jpg)">
+          <div class="carousel-item" style="background: url(<?= base_url();?>assets/home/img/slide/slide-2.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated fanimate__adeInDown">Lorem <span>Ipsum Dolor</span></h2>
@@ -30,7 +30,7 @@
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background: url(assets/img/slide/slide-3.jpg)">
+          <div class="carousel-item" style="background: url(<?= base_url();?>assets/home/img/slide/slide-3.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Sequi ea <span>Dime Lara</span></h2>

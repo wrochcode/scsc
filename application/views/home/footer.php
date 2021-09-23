@@ -61,11 +61,11 @@
             <h3>About Eterna</h3>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
-                <a href="<?= $twitter; ?>" class="twitter"><i class="icofont-twitter"></i></a>
-                <a href="<?= $facebook; ?>" class="facebook"><i class="icofont-facebook"></i></a>
-                <a href="<?= $instagram; ?>" class="instagram"><i class="icofont-instagram"></i></a>
-                <a href="<?= $skype; ?>" class="skype"><i class="icofont-skype"></i></a>
-                <a href="<?= $linkedin; ?>" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+                <a href="<?= $twitter; ?>" target="_blank" class="twitter"><i class="icofont-twitter"></i></a>
+                <a href="<?= $facebook; ?>" target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="<?= $instagram; ?>" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
+                <a href="<?= $skype; ?>" target="_blank" class="skype"><i class="icofont-skype"></i></a>
+                <a href="<?= $linkedin; ?>" target="_blank" class="linkedin"><i class="icofont-linkedin"></i></i></a>
             </div>
           </div>
 
@@ -75,7 +75,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Eterna</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span><?= $singkatan;?></span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
