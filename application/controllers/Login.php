@@ -15,9 +15,21 @@ class login extends CI_Controller
     public function index()
     {
         $data['title'] = "Login";
+        $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
+        $tempVar = $tempVar[0]["value"];
+        $data['logo'] = $tempVar;
+        
+        $tempVar = $this->scsc->getData("profil",array('name'=>'singkatan'));
+        $tempVar = $tempVar[0]["value"];
+        $data['singkatan'] = $tempVar;
+
+
+        
+        // var_dump($tempVar);
+        
         
         $this->load->view('auth/header', $data);
-        $this->load->view('auth/login');
+        $this->load->view('auth/login', $data);
         $this->load->view('auth/footer');
     }
 
@@ -40,6 +52,7 @@ class login extends CI_Controller
                 'email'=>$user,
                 'status'=>'login'
             );
+            
             
             $this->session->set_userdata($accountSession);
 

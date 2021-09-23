@@ -17,9 +17,14 @@ class akunsaya extends CI_Controller
         $data['title'] = "Profile Account";
 
         $dataPenunjuk = array('email'=>$this->session->userdata('email'));
-        $accountUser = $this->scsc->getData("user",$dataPenunjuk);
+        $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
+        $tempVar = $tempVar[0]["value"];
+        $data['logo'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("profil",array('name'=>'singkatan'));
+        $tempVar = $tempVar[0]["value"];
+        $data['singkatan'] = $tempVar;
         
-        // $data['email'] = $accountUser[0]["email"];
         $data['email'] = $this->session->userdata('status');
         $data['role'] = $this->session->userdata('role');
         $this->load->view('akun/header', $data);

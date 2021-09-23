@@ -15,8 +15,16 @@ class register extends CI_Controller
     public function index()
     {
         $data['title'] = "Register";
+        $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
+        $tempVar = $tempVar[0]["value"];
+        $data['logo'] = $tempVar;
+        
+        $tempVar = $this->scsc->getData("profil",array('name'=>'singkatan'));
+        $tempVar = $tempVar[0]["value"];
+        $data['singkatan'] = $tempVar;
+
         $this->load->view('auth/header', $data);
-        $this->load->view('auth/register');
+        $this->load->view('auth/register', $data);
         $this->load->view('auth/footer');
     }
 
