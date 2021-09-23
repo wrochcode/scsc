@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2021 at 06:31 PM
+-- Generation Time: Sep 23, 2021 at 08:27 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -62,7 +62,15 @@ CREATE TABLE `profil` (
 INSERT INTO `profil` (`id`, `name`, `value`, `description`) VALUES
 (1, 'title', 'Service Computer Semarang City', 'nama perusahaan'),
 (2, 'singkatan', 'SCSC', 'singkatan nama perusahaan'),
-(3, 'logo', 'stisla-fill.svg', 'logo perusahaan\r\n');
+(3, 'logo', 'stisla-fill.svg', 'logo perusahaan\r\n'),
+(4, 'email', 'scscofficial@scsc.com', 'Email official perusahaan'),
+(5, 'telp', '+62 895-326-920-220', 'Number telepon perusahaan'),
+(6, 'alamat', 'Jl. Imam Bonjol No.207, Pendrikan Kidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50131', 'Alamat Office Perusahaan'),
+(7, 'twitter', 'https://twitter.com/excel_shelby', 'social media twitter official'),
+(8, 'facebook', 'https://www.facebook.com/wahyu.punk.988', 'social media facebook official'),
+(9, 'instagram', 'https://www.instagram.com/w.roch19/', 'social media instagram official'),
+(10, 'skype', '#', 'social media skype official'),
+(11, 'linkedin', 'https://www.linkedin.com/in/wahyu-rochman-bantoro/', 'social media linkedin official');
 
 -- --------------------------------------------------------
 
@@ -194,9 +202,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `photo`, `email`, `telp`, `birthday`, `jobs`, `gender`, `address`, `role`, `status`, `complete`, `password`) VALUES
-(1, 'Wahyu Rochman Bantoro', '', '111201811229@mhs.dinus.ac.id', '', '', '', 'laki-laki', 'East Blue', 1, '', 0, 'wahyu123'),
-(17, '', '', 'tampan@tampan.com', '', '', '', '', '', 5, '', 0, 'a0e6983146b63c23a662059b7032fffc'),
-(18, '', '', 'mantan@scsc.com', '', '', '', '', '', 5, '', 0, '70ec4d46b5b93141ad42d196071823fb');
+(1, '', '', 'trial@scsc.com', '', '', '', '', '', 5, '', 0, 'ed68b744cf92725fd85bc9501022c4e0');
 
 -- --------------------------------------------------------
 
@@ -296,7 +302,7 @@ ALTER TABLE `mainsidebar`
 -- AUTO_INCREMENT for table `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -326,7 +332,7 @@ ALTER TABLE `sidebarcategory`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user login history`
