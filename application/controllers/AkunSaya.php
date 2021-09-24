@@ -68,7 +68,7 @@ class akunsaya extends CI_Controller
     public function pemberitahuan()
     {
         $data['title'] = "Pemberitahuan";
-        // var_dump();
+        var_dump();
 
         $dataPenunjuk = array('email'=>$this->session->userdata('email'));
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
