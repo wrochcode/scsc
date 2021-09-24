@@ -54,7 +54,7 @@ class home extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
         
-        $data['active'] = 0;
+        $data['active'] = 3;
         $data['dd'] = 2;
         $data['dda'] = 3;
 
