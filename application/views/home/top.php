@@ -33,8 +33,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <?php
-            $a=1;
+          <?php $a=1;
             foreach($menu as $nama):?>
             <?php if($a == $active && $nama['id'] != $dd):?>
               <li class="active"><a href="<?= base_url().strtolower($nama['name']);?>"><?= $nama['name'];?></a></li>
