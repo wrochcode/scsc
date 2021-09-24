@@ -33,9 +33,31 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-
-          <li class="drop-down"><a href="#">About</a>
+          <?php
+            $a=1;
+            foreach($menu as $nama):?>
+            <?php if($a == $active):?>
+              <?php if($a != $dd):?>
+                <li class="active">
+              <?php endif;?>
+            <?php elseif($a==$dda):?>
+              <li class="drop-down">
+                <a href="#"><?= $nama['name'];?></a>
+                <ul>
+                  <?php foreach($submenu as $subnama):?>
+                    <li><a href="<?= base_url().strtolower($nama['name'])?>/<?=$subnama['value'];?>"></a></li>
+                    <?php endforeach;?>
+                  </ul>
+                </li>
+              <?php else:?>
+                <li>
+                <?php foreach($submenu as $subnama):?>
+                  <a href="<?= base_url().strtolower($subnama['name']);?>"><?= $subnama['value'];?></a></li>
+                <?php endforeach;?>
+            <?php endif;?>
+            <?php $a++;?>
+          <?php endforeach;?>
+          <!-- <li class="drop-down"><a href="#">About</a>
             <ul>
               <li><a href="about.html">About Us</a></li>
               <li><a href="team.html">Team</a></li>
@@ -50,13 +72,13 @@
                 </ul>
               </li>
             </ul>
-          </li>
+          </li> -->
 
-          <li><a href="services.html">Services</a></li>
+          <!-- <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li> -->
 
         </ul>
       </nav><!-- .nav-menu -->

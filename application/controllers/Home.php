@@ -8,6 +8,12 @@ class home extends CI_Controller
         $data['title'] = "SCSC";
         // var_dump();
 
+        $tempVar = $this->scsc->getAll("homemenu");
+        $data['menu'] = $tempVar;
+        
+        $tempVar = $this->scsc->getAll("homemenuabout");
+        $data['submenu'] = $tempVar;
+
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
         $tempVar = $tempVar[0]["value"];
         $data['logo'] = $tempVar;
@@ -48,7 +54,10 @@ class home extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
         
-        $data['active'] = 1;
+        $data['active'] = 3;
+        $data['dd'] = 2;
+        $data['dda'] = 2;
+
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
         $this->load->view('home/index', $data);
