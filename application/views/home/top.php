@@ -36,24 +36,23 @@
           <?php
             $a=1;
             foreach($menu as $nama):?>
-            <?php if($a == $active):?>
-              <?php if($a != $dd):?>
-                <li class="active">
-              <?php endif;?>
-            <?php elseif($a==$dda):?>
-              <li class="drop-down">
-                <a href="#"><?= $nama['name'];?></a>
+            <?php if($a == $active && $nama['id'] != $dd):?>
+              <li class="active"><a href="<?= base_url().strtolower($nama['name']);?>"><?= $nama['name'];?></a></li>
+            <?php elseif($nama['id'] == $dd):?>
+              <li class="drop-down"><a href="#"><?= $nama['name'];?></a>
                 <ul>
-                  <?php foreach($submenu as $subnama):?>
-                    <li><a href="<?= base_url().strtolower($nama['name'])?>/<?=$subnama['value'];?>"></a></li>
-                    <?php endforeach;?>
-                  </ul>
-                </li>
-              <?php else:?>
-                <li>
-                <?php foreach($submenu as $subnama):?>
-                  <a href="<?= base_url().strtolower($subnama['name']);?>"><?= $subnama['value'];?></a></li>
-                <?php endforeach;?>
+                  <?php $b=1; foreach($submenu as $subnama):?>
+                    <?php if($subnama['id'] != $dda):?>
+                      <li>
+                    <?php else:?>                      
+                      <li class="active">
+                    <?php endif;?>
+                    <a href="<?= base_url().strtolower($subnama['name']);?>"><?= $subnama['value'];?></a></li>
+                  <?php endforeach;?>
+                </ul>
+              </li>
+            <?php else:?>
+              <li><a href="<?= base_url().strtolower($nama['name']);?>"><?= $nama['name'];?></a></li>
             <?php endif;?>
             <?php $a++;?>
           <?php endforeach;?>

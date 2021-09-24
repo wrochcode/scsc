@@ -54,9 +54,9 @@ class home extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
         
-        $data['active'] = 3;
+        $data['active'] = 0;
         $data['dd'] = 2;
-        $data['dda'] = 2;
+        $data['dda'] = 3;
 
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
