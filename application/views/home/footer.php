@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-
+    <!--  -->
     <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -46,7 +46,7 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-                <?= $alamat; ?>
+              <?= $alamat; ?>
               <!-- A108 Adam Street <br>
               New York, NY 535022<br>
               United States <br><br> -->
@@ -61,11 +61,11 @@
             <h3>About Eterna</h3>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
-                <a href="<?= $twitter; ?>" target="_blank" class="twitter"><i class="icofont-twitter"></i></a>
-                <a href="<?= $facebook; ?>" target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
-                <a href="<?= $instagram; ?>" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
-                <a href="<?= $skype; ?>" target="_blank" class="skype"><i class="icofont-skype"></i></a>
-                <a href="<?= $linkedin; ?>" target="_blank" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+              <a href="<?= $twitter; ?>" target="_blank" class="twitter"><i class="icofont-twitter"></i></a>
+              <a href="<?= $facebook; ?>" target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+              <a href="<?= $instagram; ?>" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
+              <a href="<?= $skype; ?>" target="_blank" class="skype"><i class="icofont-skype"></i></a>
+              <a href="<?= $linkedin; ?>" target="_blank" class="linkedin"><i class="icofont-linkedin"></i></i></a>
             </div>
           </div>
 
@@ -75,7 +75,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span><?= $singkatan;?></span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span><?= $singkatan; ?></span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -104,6 +104,6 @@
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/home/js/main.js"></script>
 
-</body>
+  </body>
 
-</html>
+  </html>
