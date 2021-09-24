@@ -24,6 +24,7 @@ class register extends CI_Controller
         $data['singkatan'] = $tempVar;
 
         $this->load->view('auth/header', $data);
+        $this->load->view('auth/top', $data);
         $this->load->view('auth/register', $data);
         $this->load->view('auth/footer');
     }

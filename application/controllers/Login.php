@@ -29,6 +29,7 @@ class login extends CI_Controller
         
         
         $this->load->view('auth/header', $data);
+        $this->load->view('auth/top', $data);
         $this->load->view('auth/login', $data);
         $this->load->view('auth/footer');
     }
