@@ -7,9 +7,26 @@ class home extends CI_Controller
     {
         $data['title'] = "SCSC";
         // var_dump();
+        $dataPenunjuk = $this->session->userdata('email');
+        if($dataPenunjuk!=null):
+            $value=1;
+            $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
+            if($tempVar[0]["name"] != NULL):
+                $tempVar = $tempVar[0]["name"];
+            else:
+                $tempVar = $tempVar[0]["email"];
+            endif;
+            $data['emailuser'] = $tempVar;
+            // var_dump($data['emailuser']);
+        endif;
 
         $tempVar = $this->scsc->getAll("homemenu");
         $data['menu'] = $tempVar;
+        if(isset($dataPenunjuk)):
+            $data['menu'][count($data['menu'])-1]['name']=$data['emailuser'];
+            // echo $data['menu'][5]['value'];
+        endif;
+        
         
         $tempVar = $this->scsc->getAll("homemenuabout");
         $data['submenu'] = $tempVar;

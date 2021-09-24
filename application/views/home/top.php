@@ -36,7 +36,7 @@
           <?php $a=1;
             foreach($menu as $nama):?>
             <?php if($a == $active && $nama['id'] != $dd):?>
-              <li class="active"><a href="<?= base_url().strtolower($nama['name']);?>"><?= $nama['name'];?></a></li>
+              <li class="active"><a href="<?= base_url().strtolower($nama['value']);?>"><?= $nama['name'];?></a></li>
             <?php elseif($nama['id'] == $dd):?>
               <li class="drop-down"><a href="#"><?= $nama['name'];?></a>
                 <ul>
@@ -51,7 +51,7 @@
                 </ul>
               </li>
             <?php else:?>
-              <li><a href="<?= base_url().strtolower($nama['name']);?>"><?= $nama['name'];?></a></li>
+              <li><a href="<?= base_url().strtolower($nama['value']);?>"><?= $nama['name'];?></a></li>
             <?php endif;?>
             <?php $a++;?>
           <?php endforeach;?>

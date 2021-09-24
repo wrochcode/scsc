@@ -15,18 +15,15 @@ class akunsaya extends CI_Controller
     public function index()
     {
         $data['title'] = "Profile Account";
-        // var_dump();
 
         $dataPenunjuk = $this->session->userdata('email');
         $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
-        // $tempVar = $tempVar[0]["email"];
         if($tempVar[0]["name"] != NULL):
             $tempVar = $tempVar[0]["name"];
         else:
             $tempVar = $tempVar[0]["email"];
         endif;
         $data['email'] = $tempVar;
-        // var_dump($data['email']);
 
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
         $tempVar = $tempVar[0]["value"];
@@ -37,20 +34,14 @@ class akunsaya extends CI_Controller
         $data['singkatan'] = $tempVar;
 
         $tempVar = $this->scsc->getData("mainsidebar",array('status'=>1));
-        // $tempVar = $tempVar[0]["value"];
         $data['header'] = $tempVar;
-        // var_dump($data['header']);
 
         $tempVar = $this->scsc->getAll("sidebarcategory");
-        // $tempVar = $tempVar[0]["value"];
         $data['menu'] = $tempVar;
-        // var_dump($data['menu']);
 
         $tempVar = $this->scsc->getData("sidebar",array('status'=>1));
-        // $tempVar = $tempVar[0]["value"];
         $data['submenu'] = $tempVar;
         
-        // $data['email'] = $this->session->userdata('email');
         $data['role'] = $this->session->userdata('role');
         $data['active'] = 1;
         $this->load->view('akun/header', $data);
@@ -80,17 +71,12 @@ class akunsaya extends CI_Controller
         $data['singkatan'] = $tempVar;
 
         $tempVar = $this->scsc->getData("mainsidebar",array('status'=>1));
-        // $tempVar = $tempVar[0]["value"];
         $data['header'] = $tempVar;
-        // var_dump($data['header']);
         
         $tempVar = $this->scsc->getAll("sidebarcategory");
-        // $tempVar = $tempVar[0]["value"];
         $data['menu'] = $tempVar;
-        // var_dump($data['menu']);
         
         $tempVar = $this->scsc->getData("sidebar",array('status'=>1));
-        // $tempVar = $tempVar[0]["value"];
         $data['submenu'] = $tempVar;
         
         $data['email'] = $this->session->userdata('status');
@@ -106,7 +92,6 @@ class akunsaya extends CI_Controller
     
     public function logout()
     {
-        // $this->session->sess_destroy();
         $this->session->unset_userdata('status');
         redirect('login');
     }
