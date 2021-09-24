@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2021 at 11:12 AM
+-- Generation Time: Sep 24, 2021 at 07:17 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -66,6 +66,20 @@ INSERT INTO `homemenuabout` (`id`, `name`, `value`, `status`) VALUES
 (1, 'about_us', 'Tentang kami', 1),
 (2, 'tim', 'Anggota', 1),
 (3, 'SOP', 'SOP', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item`
+--
+
+CREATE TABLE `item` (
+  `id` int(191) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `description` varchar(191) NOT NULL,
+  `price` int(191) NOT NULL,
+  `status` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -152,6 +166,40 @@ CREATE TABLE `roleaccess` (
   `id` int(191) NOT NULL,
   `role` int(191) NOT NULL,
   `category` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service`
+--
+
+CREATE TABLE `service` (
+  `id` int(191) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `description` text NOT NULL,
+  `estimation` varchar(191) NOT NULL,
+  `status` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `service`
+--
+
+INSERT INTO `service` (`id`, `name`, `description`, `estimation`, `status`) VALUES
+(1, 'Pemeliharaan PC', 'Pemeliharaan pc', '1-2 hari kerja', 1),
+(2, 'Upgrade device', 'Upgrade spesifikasi segala bentuk perangkat', '1-5 hari', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `showservice`
+--
+
+CREATE TABLE `showservice` (
+  `id` int(191) NOT NULL,
+  `id_show` int(191) NOT NULL,
+  `id_service` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -248,7 +296,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `photo`, `email`, `telp`, `birthday`, `jobs`, `gender`, `address`, `role`, `status`, `complete`, `password`) VALUES
-(1, '', '', 'trial@scsc.com', '', '', '', '', '', 5, '', 0, 'ed68b744cf92725fd85bc9501022c4e0');
+(1, '', '', 'trial@scsc.com', '', '', '', '', '', 5, '', 0, 'ed68b744cf92725fd85bc9501022c4e0'),
+(20, '', '', 'coba@coba.com', '', '', '', '', '', 5, '', 0, 'c3ec0f7b054e729c5a716c8125839829'),
+(21, '', '', 'scsc@scsc.com', '', '', '', '', '', 5, '', 0, 'ed68b744cf92725fd85bc9501022c4e0');
 
 -- --------------------------------------------------------
 
@@ -293,6 +343,12 @@ ALTER TABLE `homemenuabout`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `mainsidebar`
 --
 ALTER TABLE `mainsidebar`
@@ -314,6 +370,18 @@ ALTER TABLE `role`
 -- Indexes for table `roleaccess`
 --
 ALTER TABLE `roleaccess`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `service`
+--
+ALTER TABLE `service`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `showservice`
+--
+ALTER TABLE `showservice`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -354,13 +422,19 @@ ALTER TABLE `voucher`
 -- AUTO_INCREMENT for table `homemenu`
 --
 ALTER TABLE `homemenu`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `homemenuabout`
 --
 ALTER TABLE `homemenuabout`
   MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `item`
+--
+ALTER TABLE `item`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `mainsidebar`
@@ -387,6 +461,18 @@ ALTER TABLE `roleaccess`
   MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `service`
+--
+ALTER TABLE `service`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `showservice`
+--
+ALTER TABLE `showservice`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sidebar`
 --
 ALTER TABLE `sidebar`
@@ -402,7 +488,7 @@ ALTER TABLE `sidebarcategory`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `user login history`
