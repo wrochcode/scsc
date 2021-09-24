@@ -8,7 +8,13 @@ class login extends CI_Controller
     {
         parent::__construct();
         if($this->session->userdata('status') == "login" ){
-            redirect('akunsaya');
+            $tempVar = $this->scsc->getData("user",array('email'=>$this->session->userdata('email')));
+            $tempVar = $tempVar[0]["role"];
+            if($tempVar == '5'){
+                redirect(base_url());
+            }else{
+                redirect('akunsaya');
+            }
         }
     }
     
@@ -57,7 +63,13 @@ class login extends CI_Controller
             
             $this->session->set_userdata($accountSession);
 
-            redirect('akunsaya',$data);
+            $tempVar = $this->scsc->getData("user",array('email'=>$this->session->userdata('email')));
+            $tempVar = $tempVar[0]["role"];
+            if($tempVar == '5'){
+                redirect(base_url());
+            }else{
+                redirect('akunsaya');
+            }
         }else{
             $this->session->set_flashdata('message', '<div class="alert alert-danger text-center">Your account not already exist, please checked your configurated email and password. Thank you</div>');
             redirect('login');

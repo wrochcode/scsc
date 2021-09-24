@@ -7,8 +7,14 @@ class register extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if($this->session->userdata('status') == 'login'){
-            redirect(base_url());
+        if($this->session->userdata('status') == "login" ){
+            $tempVar = $this->scsc->getData("user",array('email'=>$this->session->userdata('email')));
+            $tempVar = $tempVar[0]["role"];
+            if($tempVar == '5'){
+                redirect(base_url());
+            }else{
+                redirect('akunsaya');
+            }
         }
     }
     
