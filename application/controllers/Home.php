@@ -24,7 +24,6 @@ class home extends CI_Controller
         $data['menu'] = $tempVar;
         if(isset($dataPenunjuk)):
             $data['menu'][count($data['menu'])-1]['name']=$data['emailuser'];
-            // echo $data['menu'][5]['value'];
         endif;
         
         
@@ -70,6 +69,16 @@ class home extends CI_Controller
         $tempVar = $this->scsc->getData("profil",array('name'=>'linkedin'));
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
+
+        $tempVar = $this->scsc->getAll("corefitur");
+        $data['mainfitur'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("service",array('status'=>'1'));
+        // $tempVar = $tempVar[0]["value"];
+        $data['services'] = $tempVar;
+
+        $tempVar = $this->scsc->getFew("testimoni", "ASC", 3);
+        $data['testimoni'] = $tempVar;
         
         $data['active'] = 3;
         $data['dd'] = 2;
