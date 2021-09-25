@@ -89,4 +89,13 @@ class home extends CI_Controller
         $this->load->view('home/index', $data);
         $this->load->view('home/footer', $data);
     }
+
+    public function newsletter(){
+        $user = $this->input->post('email');
+
+        $email = array('email'=>$user,'status'=>1);
+        $this->scsc->insertEmail($email);
+
+        redirect(base_url());
+    }
 }

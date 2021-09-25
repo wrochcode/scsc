@@ -30,4 +30,9 @@ class scsc extends CI_Model
         // return $this->db->get($tabel)->result_array();
         return $this->db->get($tabel,0,$limit)->result_array();
     }
+
+    public function insertEmail($email)
+    {
+        return $this->db->insert("newsletter", $email);
+    }
 }
