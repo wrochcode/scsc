@@ -112,7 +112,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Our Services</h2>
+          <h2>Layanan kami</h2>
         </div>
 
         <div class="row">
@@ -123,8 +123,10 @@
                 <div class="icon"><i class="bx <?= $service['icon'];?>"></i></div>
                 <h4><a href=""><?= $service['name'];?></a></h4>
                 <p><?= $service['description'];?></p>
+                <br>
+                <a href="<?= base_url()?>service/serviceitem/<?= $service['name'];?>" class="stretched-link"><p><small>klik lebih lanjut</small></p></a>
               </div>
-            </div>           
+            </div>
           <?php $a++;
           endforeach;?>
           
@@ -174,7 +176,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
+    <!-- <section id="clients" class="clients">
       <div class="container">
 
         <div class="section-title">
@@ -194,6 +196,7 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section> -->
+    <!-- End Clients Section -->
 
   </main><!-- End #main -->

@@ -7,10 +7,10 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Services</li>
+          <li><a href="<?= base_url();?>">Home</a></li>
+          <li><a href="<?= base_url().$link;?>" ><?= $link;?></a></li> 
         </ol>
-        <h2>Services</h2>
+        <h2><?= $link;?></h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -19,16 +19,26 @@
     <section id="services" class="services">
       <div class="container">
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-            </div>
-          </div>
+        <div class="section-title" data-aos="fade-up">
+          <h2>Layanan kami</h2>
+        </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+        <div class="row">
+          <?php $a=1 ;
+          foreach($services as $service):?>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch <?php if($a > 3):?>mt-4<?php endif;?>">
+              <div class="icon-box">
+                <div class="icon"><i class="bx <?= $service['icon'];?>"></i></div>
+                <h4><a href=""><?= $service['name'];?></a></h4>
+                <p><?= $service['description'];?></p>
+                <br>
+                <a href="<?= base_url()?>service/serviceitem/<?= $service['name'];?>" class="stretched-link"><p><small>klik lebih lanjut</small></p></a>
+              </div>
+            </div>
+          <?php $a++;
+          endforeach;?>
+          
+          <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="">Sed ut perspiciatis</a></h4>
@@ -66,7 +76,7 @@
               <h4><a href="">Divera don</a></h4>
               <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
@@ -74,11 +84,10 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Our Skills Section ======= -->
-    <section id="skills" class="skills">
+    <!-- <section id="skills" class="skills">
       <div class="container">
-
         <div class="section-title">
-          <h2>Our Skills</h2>
+          <h2>Penghargaan kita</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -128,7 +137,7 @@
         </div>
 
       </div>
-    </section><!-- End Our Skills Section -->
+    </section>End Our Skills Section -->
 
   </main><!-- End #main -->
 

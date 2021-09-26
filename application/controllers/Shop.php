@@ -72,9 +72,9 @@ class shop extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
         
-        $data['active'] = 3;
+        $data['active'] = 4;
         $data['dd'] = 2;
-        $data['dda'] = 3;
+        $data['dda'] = 0;
 
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
@@ -150,9 +150,9 @@ class shop extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
         
-        $data['active'] = 3;
+        $data['active'] = 4;
         $data['dd'] = 2;
-        $data['dda'] = 3;
+        $data['dda'] = 0;
 
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);

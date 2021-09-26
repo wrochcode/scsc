@@ -77,12 +77,12 @@ class home extends CI_Controller
         // $tempVar = $tempVar[0]["value"];
         $data['services'] = $tempVar;
 
-        $tempVar = $this->scsc->getFew("testimoni", "ASC", 3);
-        $data['testimoni'] = $tempVar;
+        // $tempVar = $this->scsc->getFew("testimoni", "ASC", 3);
+        // $data['testimoni'] = $tempVar;
         
         $data['active'] = 1;
         $data['dd'] = 2;
-        $data['dda'] = 1;
+        $data['dda'] = 0;
 
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
