@@ -7,7 +7,7 @@
 
         <ol>
           <li><a href="<?= base_url();?>">Home</a></li>
-          <li><a href="<?= base_url().$link;?>" ><?= $link;?></a></li> 
+          <li><a href="<?= base_url().strtolower($link);?>" ><?= $link;?></a></li> 
         </ol>
         <h2><?= $link;?></h2>
 
@@ -42,9 +42,12 @@
                   <h4><?=$product['name'];?></h4>
                   <p><?=$product['category'];?></p>
                   <div class="portfolio-links">
-                    <a href="<?=base_url();?>assets/home/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="<?=$product['name'];?>"><i class="bx bx-plus"></i></a>
+                    <!-- <a href="<?=base_url();?>assets/home/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="<?=$product['name'];?>"><i class="bx bx-plus"></i></a> -->
+                    <a href="#" class="#" title="Add chart"><i class="bx bx-plus"></i></a>
+                    <a href="<?=base_url();?>assets/home/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="<?=$product['name'];?>"><i class="bx bx-zoom-in"></i></a>
+                    
                     <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                    <a href="<?=base_url();?>/shop/detail" title="More Details"><i class="bx bx-link"></i></a>
+                    <a href="<?=base_url();?>shop/detail/<?=$product['name'];?>" title="More Details"><i class="bx bx-link"></i></a>
                   </div>
                 </div>
               </div>

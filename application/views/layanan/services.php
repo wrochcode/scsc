@@ -8,7 +8,7 @@
 
         <ol>
           <li><a href="<?= base_url();?>">Home</a></li>
-          <li><a href="<?= base_url().$link;?>" ><?= $link;?></a></li> 
+          <li><a href="<?= base_url().strtolower($link);?>" ><?= $link;?></a></li>
         </ol>
         <h2><?= $link;?></h2>
 

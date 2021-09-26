@@ -7,10 +7,10 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Portfolio Details</li>
+          <li><a href="<?= base_url();?>">Home</a></li>
+          <li><a href="<?= base_url().strtolower($link);?>" ><?= $link;?></a></li>
         </ol>
-        <h2>Portfolio Details</h2>
+        <h2>Detail Produk</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->

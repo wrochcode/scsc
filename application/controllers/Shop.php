@@ -87,7 +87,7 @@ class shop extends CI_Controller
         // var_dump($data['produk']);
         // end show data
         
-        $data['link'] = "shop";
+        $data['link'] = "Shop";
         $data['active'] = 4;
         $data['dd'] = 2;
         $data['dda'] = 0;
@@ -174,6 +174,7 @@ class shop extends CI_Controller
 
 
         
+        $data['link'] = "Shop";
         $data['active'] = 4;
         $data['dd'] = 2;
         $data['dda'] = 0;

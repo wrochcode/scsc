@@ -76,7 +76,7 @@ class service extends CI_Controller
         $data['services'] = $tempVar;
         
         // $data['indikator'] = "";
-        $data['link'] = "service";
+        $data['link'] = "Service";
 
         $data['active'] = 3;
         $data['dd'] = 2;
@@ -161,7 +161,7 @@ class service extends CI_Controller
         $data['services'] = $tempVar;
         
         // $data['indikator'] = "";
-        $data['link'] = "service";
+        $data['link'] = "Service";
 
         $data['active'] = 3;
         $data['dd'] = 2;
