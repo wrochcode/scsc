@@ -6,10 +6,10 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Portfolio</li>
+          <li><a href="<?= base_url();?>">Home</a></li>
+          <li><a href="<?= base_url().$link;?>" ><?= $link;?></a></li> 
         </ol>
-        <h2>Portfolio</h2>
+        <h2><?= $link;?></h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -22,30 +22,37 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
+              <?php foreach($produkcategory as $category): ?>
+                <li data-filter=".filter-<?= strtolower($category['name']);?>"><?=$category['name'];?></li>
+              <?php endforeach;?>
+              <!-- <li data-filter=".filter-app">App</li>
               <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-web">Web</li> -->
             </ul>
           </div>
         </div>
 
         <div class="row portfolio-container">
+          <?php foreach($products as $product):?>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-<?=strtolower($product['category']);?>">
+              <div class="portfolio-wrap">
+                <img src="<?=base_url();?>assets/home/img/portfolio/<?=$product['photo'];?>" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4><?=$product['name'];?></h4>
+                  <p><?=$product['category'];?></p>
+                  <div class="portfolio-links">
+                    <a href="<?=base_url();?>assets/home/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="<?=$product['name'];?>"><i class="bx bx-plus"></i></a>
+                    <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                    <a href="<?=base_url();?>/shop/detail" title="More Details"><i class="bx bx-link"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <?php endforeach;?>
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -155,7 +162,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
@@ -163,7 +170,7 @@
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
+    <!-- <section id="clients" class="clients">
       <div class="container">
 
         <div class="section-title">
@@ -183,6 +190,6 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section>End Clients Section -->
 
   </main><!-- End #main -->

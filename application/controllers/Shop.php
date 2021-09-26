@@ -6,6 +6,7 @@ class shop extends CI_Controller
 
     public function index()
     {
+        // home data
         $data['title'] = "SCSC - Service";
         // var_dump();
         $dataPenunjuk = $this->session->userdata('email');
@@ -71,19 +72,34 @@ class shop extends CI_Controller
         $tempVar = $this->scsc->getData("profil",array('name'=>'linkedin'));
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
+        // end home data
+
+        //show data
+        $tempVar = $this->scsc->getData("produk",array('status'=>1));
+        $data['products'] = $tempVar;
         
+        $tempVar = $this->scsc->getData("produkcategory",array('status'=>1));
+        $data['produkcategory'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("service",array('status'=>'1'));
+        // $tempVar = $tempVar[0]["value"];
+        $data['services'] = $tempVar;
+        // var_dump($data['produk']);
+        // end show data
+        
+        $data['link'] = "shop";
         $data['active'] = 4;
         $data['dd'] = 2;
         $data['dda'] = 0;
 
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
-        $this->load->view('layanan/shop');
+        $this->load->view('layanan/shop',$data);
         $this->load->view('home/footer', $data);
     }
 
-    public function detail()
-    {
+    public function detail(){
+        // home data
         $data['title'] = "SCSC - Shop - Detail";
         // var_dump();
         $dataPenunjuk = $this->session->userdata('email');
@@ -149,6 +165,14 @@ class shop extends CI_Controller
         $tempVar = $this->scsc->getData("profil",array('name'=>'linkedin'));
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("service",array('status'=>'1'));
+        // $tempVar = $tempVar[0]["value"];
+        $data['services'] = $tempVar;
+
+        // end home data
+
+
         
         $data['active'] = 4;
         $data['dd'] = 2;

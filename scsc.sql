@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2021 at 08:06 PM
+-- Generation Time: Sep 26, 2021 at 08:09 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -128,21 +128,50 @@ INSERT INTO `mainsidebar` (`id`, `name`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `newsletter`
+-- Table structure for table `produk`
 --
 
-CREATE TABLE `newsletter` (
+CREATE TABLE `produk` (
   `id` int(191) NOT NULL,
-  `email` varchar(191) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `photo` varchar(191) NOT NULL,
+  `category` varchar(191) NOT NULL,
+  `description` text NOT NULL,
+  `price` int(191) NOT NULL,
   `status` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `newsletter`
+-- Dumping data for table `produk`
 --
 
-INSERT INTO `newsletter` (`id`, `email`, `status`) VALUES
-(1, 'whyrchmn19@gmail.com', 0);
+INSERT INTO `produk` (`id`, `name`, `photo`, `category`, `description`, `price`, `status`) VALUES
+(1, 'HDD 1 TB', 'portfolio-1.jpg', 'Penyimpanan', 'Penyimpanan HDD berkapasitas 1000 GB dengan garansi 1 bulan', 500000, 1),
+(2, 'Router TP-Link 300Mbps', 'portfolio-2.jpg', 'Internet', 'router', 133000, 1),
+(3, 'Router TP-Link 200Mbps', 'portfolio-3.jpg', 'Internet', 'router', 183000, 1),
+(4, 'Router TP-Link 500Mbps', 'portfolio-4.jpg', 'Internet', 'Internet', 383000, 1),
+(5, 'Proyektor 2d Inch Samsung', 'portfolio-5.jpg', 'Proyektor', 'proyektor larang', 2200000, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produkcategory`
+--
+
+CREATE TABLE `produkcategory` (
+  `id` int(191) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `status` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `produkcategory`
+--
+
+INSERT INTO `produkcategory` (`id`, `name`, `status`) VALUES
+(1, 'Penyimpanan', 1),
+(2, 'Proyektor', 1),
+(3, 'Internet', 1);
 
 -- --------------------------------------------------------
 
@@ -232,12 +261,26 @@ CREATE TABLE `service` (
 --
 
 INSERT INTO `service` (`id`, `icon`, `name`, `description`, `estimation`, `level`, `price`, `status`) VALUES
-(1, 'bx-laptop', 'Pemeliharaan Komputer/Laptop', 'Pemeliharaan komputer/laptop secara keseluruhan secara detail', '1-2 hari', 1, 0, 1),
-(2, 'bx-laptop', 'Service Laptop/Komputer', 'Service Laptop/Komputer segala kondisi baik mati atau nyala', '1-5 hari', 1, 0, 1),
-(3, 'bx-laptop', 'Instal Ulang', 'Instal ulang OS terbaru pada perangkat komputer/laptop', '1-2 hari', 1, 0, 1),
-(4, 'bx-laptop', 'Upgrade Device', 'Upgrade spesifikasi segala bentuk perangkat komputer/laptop', '3-5 hari', 1, 0, 1),
+(1, 'bx-laptop', 'Pemeliharaan Komputer atau Laptop', 'Pemeliharaan komputer atau laptop secara keseluruhan secara detail', '1-2 hari', 1, 0, 1),
+(2, 'bx-laptop', 'Service Laptop atau Komputer', 'Service Laptop atau Komputer segala kondisi baik mati atau nyala', '1-5 hari', 1, 0, 1),
+(3, 'bx-laptop', 'Instal Ulang', 'Instal ulang OS terbaru pada perangkat komputer atau laptop', '1-2 hari', 1, 0, 1),
+(4, 'bx-laptop', 'Upgrade Device', 'Upgrade spesifikasi segala bentuk perangkat komputer atau laptop', '3-5 hari', 1, 0, 1),
 (5, 'bx-laptop', 'Rakit Komputer', 'Rakit komputer secara keseluruhan item hardware', '4-10 hari', 1, 0, 1),
 (6, 'bx-laptop', 'Set Up Workspace', 'Desain dan mengatur ulang tata letak ruang kerja', '1-3 hari', 1, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `serviceitem`
+--
+
+CREATE TABLE `serviceitem` (
+  `id` int(191) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `photo` varchar(191) NOT NULL,
+  `description` text NOT NULL,
+  `price` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -432,9 +475,15 @@ ALTER TABLE `mainsidebar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `newsletter`
+-- Indexes for table `produk`
 --
-ALTER TABLE `newsletter`
+ALTER TABLE `produk`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `produkcategory`
+--
+ALTER TABLE `produkcategory`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -459,6 +508,12 @@ ALTER TABLE `roleaccess`
 -- Indexes for table `service`
 --
 ALTER TABLE `service`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `serviceitem`
+--
+ALTER TABLE `serviceitem`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -538,10 +593,16 @@ ALTER TABLE `mainsidebar`
   MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `newsletter`
+-- AUTO_INCREMENT for table `produk`
 --
-ALTER TABLE `newsletter`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `produk`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `produkcategory`
+--
+ALTER TABLE `produkcategory`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `profil`
@@ -566,6 +627,12 @@ ALTER TABLE `roleaccess`
 --
 ALTER TABLE `service`
   MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `serviceitem`
+--
+ALTER TABLE `serviceitem`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `showservice`
