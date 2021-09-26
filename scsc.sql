@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2021 at 08:09 AM
+-- Generation Time: Sep 26, 2021 at 11:40 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -137,6 +137,9 @@ CREATE TABLE `produk` (
   `photo` varchar(191) NOT NULL,
   `category` varchar(191) NOT NULL,
   `description` text NOT NULL,
+  `condition` int(191) NOT NULL,
+  `ready` int(191) NOT NULL,
+  `supply` int(191) NOT NULL,
   `price` int(191) NOT NULL,
   `status` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -145,12 +148,12 @@ CREATE TABLE `produk` (
 -- Dumping data for table `produk`
 --
 
-INSERT INTO `produk` (`id`, `name`, `photo`, `category`, `description`, `price`, `status`) VALUES
-(1, 'HDD 1 TB', 'portfolio-1.jpg', 'Penyimpanan', 'Penyimpanan HDD berkapasitas 1000 GB dengan garansi 1 bulan', 500000, 1),
-(2, 'Router TP-Link 300Mbps', 'portfolio-2.jpg', 'Internet', 'router', 133000, 1),
-(3, 'Router TP-Link 200Mbps', 'portfolio-3.jpg', 'Internet', 'router', 183000, 1),
-(4, 'Router TP-Link 500Mbps', 'portfolio-4.jpg', 'Internet', 'Internet', 383000, 1),
-(5, 'Proyektor 2d Inch Samsung', 'portfolio-5.jpg', 'Proyektor', 'proyektor larang', 2200000, 1);
+INSERT INTO `produk` (`id`, `name`, `photo`, `category`, `description`, `condition`, `ready`, `supply`, `price`, `status`) VALUES
+(1, 'HDD 1 TB', 'portfolio-1.jpg', 'Penyimpanan', 'Penyimpanan HDD berkapasitas 1000 GB dengan garansi 1 bulan', 1, 0, 30, 500000, 1),
+(2, 'Router TP-Link 300Mbps', 'portfolio-2.jpg', 'Internet', 'router', 1, 1, 15, 133000, 1),
+(3, 'Router TP-Link 200Mbps', 'portfolio-3.jpg', 'Internet', 'router', 1, 0, 20, 183000, 1),
+(4, 'Router TP-Link 500Mbps', 'portfolio-4.jpg', 'Internet', 'Internet', 1, 0, 25, 383000, 1),
+(5, 'Proyektor 2d Inch Samsung', 'portfolio-5.jpg', 'Proyektor', 'proyektor larang', 1, 0, 10, 2200000, 1);
 
 -- --------------------------------------------------------
 

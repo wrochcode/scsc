@@ -40,11 +40,18 @@
                 <img src="<?=base_url();?>assets/home/img/portfolio/<?=$product['photo'];?>" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4><?=$product['name'];?></h4>
-                  <p><?=$product['category'];?></p>
+                  <br>
+                  <?php $hasil_rupiah = "Rp " . number_format($product['price'],2,',','.');?>
+                  <p><?= $hasil_rupiah;?></p>
+                  <?php if($product['ready']==1):?>
+                    <p><small>Ready <?=$product['supply'];?> item</small></p>
+                  <?php else:?>
+                      <p><small>preorder</small></p>
+                  <?php endif;?>
                   <div class="portfolio-links">
                     <!-- <a href="<?=base_url();?>assets/home/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="<?=$product['name'];?>"><i class="bx bx-plus"></i></a> -->
                     <a href="#" class="#" title="Add chart"><i class="bx bx-plus"></i></a>
-                    <a href="<?=base_url();?>assets/home/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="<?=$product['name'];?>"><i class="bx bx-zoom-in"></i></a>
+                    <a href="<?=base_url();?>assets/home/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="Zoom <?=$product['name'];?>"><i class="bx bx-zoom-in"></i></a>
                     
                     <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
                     <a href="<?=base_url();?>shop/detail/<?=$product['name'];?>" title="More Details"><i class="bx bx-link"></i></a>
