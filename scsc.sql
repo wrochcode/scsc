@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2021 at 11:40 AM
+-- Generation Time: Sep 26, 2021 at 03:18 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -20,6 +20,52 @@ SET time_zone = "+00:00";
 --
 -- Database: `scsc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artikel`
+--
+
+CREATE TABLE `artikel` (
+  `id` int(191) NOT NULL,
+  `title` varchar(191) NOT NULL,
+  `slug` varchar(191) NOT NULL,
+  `picture` varchar(191) NOT NULL,
+  `author` varchar(191) NOT NULL,
+  `text` text NOT NULL,
+  `category` varchar(191) NOT NULL,
+  `status` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `artikel`
+--
+
+INSERT INTO `artikel` (`id`, `title`, `slug`, `picture`, `author`, `text`, `category`, `status`) VALUES
+(1, 'Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia', 'Dolorum-optio-tempore-voluptas-dignissimos-cumque-fuga-qui-quibusdam-quia', 'blog-1.jpg', 'John Doe', 'Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.\r\n                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.', 'Business', 1),
+(2, 'Nisi magni odit consequatur autem nulla dolorem', 'Nisi-magni-odit-consequatur-autem-nulla-dolorem', 'blog-2.jpg', 'John Doe', 'Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.\r\n                  Ad impedit qui officiis est in non aliquid veniam laborum. Id ipsum qui aut. Sit aliquam et quia molestias laboriosam. Tempora nam odit omnis eum corrupti qui aliquid excepturi molestiae. Facilis et sint quos sed voluptas. Maxime sed tempore enim omnis non alias odio quos distinctio.', 'Business', 1),
+(3, 'Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.', 'Possimus-soluta-ut-id-suscipit-ea-ut.-In-quo-quia-et-soluta-libero-sit-sint.', 'blog-3.jpg', 'John Doe', 'Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.\r\n                  Doloremque est saepe laborum aut. Ipsa cupiditate ex harum at recusandae nesciunt. Ut dolores velit.', 'Business', 1),
+(4, 'Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.', 'Non-rem-rerum-nam-cum-quo-minus.-Dolor-distinctio-deleniti-explicabo-eius-exercitationem.', 'blog-4.jpg', 'John Doe', 'Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.\r\n                  Quia sed sunt. Ea asperiores expedita et et delectus voluptates rerum. Id saepe ut itaque quod qui voluptas nobis porro rerum. Quam quia nesciunt qui aut est non omnis. Inventore occaecati et quaerat magni itaque nam voluptas. Voluptatem ducimus sint id earum ut nesciunt sed corrupti nemo.', 'Business', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artikel_category`
+--
+
+CREATE TABLE `artikel_category` (
+  `id` int(191) NOT NULL,
+  `name` varchar(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `artikel_category`
+--
+
+INSERT INTO `artikel_category` (`id`, `name`) VALUES
+(1, 'Tips and Trik'),
+(2, 'Update Teknologi');
 
 -- --------------------------------------------------------
 
@@ -448,6 +494,18 @@ CREATE TABLE `voucher` (
 --
 
 --
+-- Indexes for table `artikel`
+--
+ALTER TABLE `artikel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `artikel_category`
+--
+ALTER TABLE `artikel_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `corefitur`
 --
 ALTER TABLE `corefitur`
@@ -564,6 +622,18 @@ ALTER TABLE `voucher`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `artikel_category`
+--
+ALTER TABLE `artikel_category`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `corefitur`
