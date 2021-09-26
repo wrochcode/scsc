@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2021 at 03:18 PM
+-- Generation Time: Sep 26, 2021 at 08:15 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -250,7 +250,11 @@ INSERT INTO `profil` (`id`, `name`, `value`, `description`) VALUES
 (8, 'facebook', 'https://www.facebook.com/wahyu.punk.988', 'social media facebook official'),
 (9, 'instagram', 'https://www.instagram.com/w.roch19/', 'social media instagram official'),
 (10, 'skype', '#', 'social media skype official'),
-(11, 'linkedin', 'https://www.linkedin.com/in/wahyu-rochman-bantoro/', 'social media linkedin official');
+(11, 'linkedin', 'https://www.linkedin.com/in/wahyu-rochman-bantoro/', 'social media linkedin official'),
+(12, 'Misi', 'Untuk berkembang jangan ada halangan', 'misi dari perusahaan'),
+(13, 'Visi', 'memeberikan kemudahan dalam memperbaiki perangkat komputer di era digitalisasi ini', 'visi dibentuknya perusahaan'),
+(14, 'Tentang', 'Jasa service ini didirikan oleh mahasiswa udinus dengan mata kuliah technopreneur dengan upaya mendapat nilai paling baik diantara kelompok lain!', 'Tentang perusahaan'),
+(15, 'photo', 'main-photo.jpg', 'photo orang service');
 
 -- --------------------------------------------------------
 
@@ -419,18 +423,20 @@ INSERT INTO `sidebarcategory` (`id`, `name`, `parent`, `child`) VALUES
 CREATE TABLE `testimoni` (
   `id` int(191) NOT NULL,
   `email` varchar(191) NOT NULL,
+  `job` varchar(191) NOT NULL,
   `description` text NOT NULL,
-  `star` int(191) NOT NULL
+  `star` int(191) NOT NULL,
+  `status` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `testimoni`
 --
 
-INSERT INTO `testimoni` (`id`, `email`, `description`, `star`) VALUES
-(1, 'coba@coba.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 5),
-(2, 'coba2@coba.com', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum', 3),
-(3, 'coba3@coba.com', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.', 4);
+INSERT INTO `testimoni` (`id`, `email`, `job`, `description`, `star`, `status`) VALUES
+(1, 'coba@coba.com', 'mahasiswa TI', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 5, 1),
+(2, 'coba2@coba.com', 'mahasiswa Design Grafis', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum', 3, 1),
+(3, 'coba3@coba.com', 'SEO employee', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -681,7 +687,7 @@ ALTER TABLE `produkcategory`
 -- AUTO_INCREMENT for table `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `role`
