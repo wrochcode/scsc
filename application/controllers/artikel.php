@@ -70,17 +70,28 @@ class Artikel extends CI_Controller
         $tempVar = $this->scsc->getData("profil",array('name'=>'linkedin'));
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("artikel",array('status'=>'1'));
+        $data['articles'] = $tempVar;
+
+        $tempVar = $this->scsc->getAll("artikel_category");
+        $data['categories'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("service",array('status'=>'1'));
+        // $tempVar = $tempVar[0]["value"];
+        $data['services'] = $tempVar;
         
-        $data['active'] = 3;
+        $data['active'] = 5;
         $data['dd'] = 2;
-        $data['dda'] = 3;
+        $data['dda'] = 0;
 
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
-        $this->load->view('layanan/blog');
+        $this->load->view('layanan/blog', $data);
         $this->load->view('home/footer', $data);
     }
-    public function detail()
+
+    public function detail($detail)
     {
         $data['title'] = "SCSC - Artikel - Detail";
         // var_dump();
@@ -147,14 +158,26 @@ class Artikel extends CI_Controller
         $tempVar = $this->scsc->getData("profil",array('name'=>'linkedin'));
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("artikel",array('slug'=>$detail));
+        $data['components'] = $tempVar;
+        // var_dump($data['components']);
+
+        $tempVar = $this->scsc->getAll("artikel_category");
+        $data['categories'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("service",array('status'=>'1'));
+        // $tempVar = $tempVar[0]["value"];
+        $data['services'] = $tempVar;
         
+        $data['link'] = "Artikel";
         $data['active'] = 3;
         $data['dd'] = 2;
         $data['dda'] = 3;
 
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
-        $this->load->view('layanan/blog-single');
+        $this->load->view('layanan/blog-single', $data);
         $this->load->view('home/footer', $data);
     }
 

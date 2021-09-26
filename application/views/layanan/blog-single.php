@@ -7,10 +7,10 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="<?= base_url();?>">Home</a></li>
+          <li><a href="<?= base_url().strtolower($link);?>" ><?= $link;?></a></li>
         </ol>
-        <h2>Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h2>
+        <h2>Artikel Detail</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -23,94 +23,58 @@
 
           <div class="col-lg-8 entries">
 
+            <?php foreach($components as $component): ?>
             <article class="entry entry-single">
 
               <div class="entry-img">
-                <img src="assets/img/blog-1.jpg" alt="" class="img-fluid">
+                <img src="<?= base_url();?>assets/home/img/blog/<?= $component['picture'];?>" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                <a href="blog-single.html"><?= $component['title'];?></a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html"><?= $component['author'];?></a></li>
+                  <!-- <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li> -->
                 </ul>
               </div>
 
               <div class="entry-content">
                 <p>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
+                  <?= $component['text'];?>
                 </p>
-
-                <p>
-                  Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in accusamus harum vel aspernatur. Excepturi numquam nihil cumque odio. Et voluptate cupiditate.
-                </p>
-
-                <blockquote>
-                  <i class="icofont-quote-left quote-left"></i>
-                  <p>
-                    Et vero doloremque tempore voluptatem ratione vel aut. Deleniti sunt animi aut. Aut eos aliquam doloribus minus autem quos.
-                  </p>
-                  <i class="las la-quote-right quote-right"></i>
-                  <i class="icofont-quote-right quote-right"></i>
-                </blockquote>
-
-                <p>
-                  Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore tempore provident voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil magni dicta est suscipit perspiciatis. Voluptate ex rerum assumenda dolores nihil quaerat.
-                  Dolor porro tempora et quibusdam voluptas. Beatae aut at ad qui tempore corrupti velit quisquam rerum. Omnis dolorum exercitationem harum qui qui blanditiis neque.
-                  Iusto autem itaque. Repudiandae hic quae aspernatur ea neque qui. Architecto voluptatem magni. Vel magnam quod et tempora deleniti error rerum nihil tempora.
-                </p>
-
-                <h3>Et quae iure vel ut odit alias.</h3>
-                <p>
-                  Officiis animi maxime nulla quo et harum eum quis a. Sit hic in qui quos fugit ut rerum atque. Optio provident dolores atque voluptatem rem excepturi molestiae qui. Voluptatem laborum omnis ullam quibusdam perspiciatis nulla nostrum. Voluptatum est libero eum nesciunt aliquid qui.
-                  Quia et suscipit non sequi. Maxime sed odit. Beatae nesciunt nesciunt accusamus quia aut ratione aspernatur dolor. Sint harum eveniet dicta exercitationem minima. Exercitationem omnis asperiores natus aperiam dolor consequatur id ex sed. Quibusdam rerum dolores sint consequatur quidem ea.
-                  Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam voluptatem voluptatem accusamus mollitia aut atque aut.
-                </p>
-                <img src="assets/img/blog-inside-post.jpg" class="img-fluid" alt="">
-
-                <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
-                <p>
-                  Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
-                  Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
-                </p>
-                <p>
-                  Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas incidunt. Nulla sit eaque mollitia nisi asperiores est veniam.
-                </p>
-
               </div>
 
               <div class="entry-footer clearfix">
                 <div class="float-left">
                   <i class="icofont-folder"></i>
                   <ul class="cats">
-                    <li><a href="#">Business</a></li>
+                    <li><a href="#"><?= $component['category'];?></a></li>
                   </ul>
 
-                  <i class="icofont-tags"></i>
+                  <!-- <i class="icofont-tags"></i>
                   <ul class="tags">
                     <li><a href="#">Creative</a></li>
                     <li><a href="#">Tips</a></li>
                     <li><a href="#">Marketing</a></li>
-                  </ul>
+                  </ul> -->
                 </div>
 
-                <div class="float-right share">
+                <!-- <div class="float-right share">
                   <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
                   <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
                   <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
-                </div>
+                </div> -->
 
               </div>
 
             </article><!-- End blog entry -->
+            <?php endforeach;?>
 
-            <div class="blog-author clearfix">
+            <!-- <div class="blog-author clearfix">
               <img src="assets/img/blog-author.jpg" class="rounded-circle float-left" alt="">
               <h4>Jane Smith</h4>
               <div class="social-links">
@@ -121,9 +85,9 @@
               <p>
                 Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
               </p>
-            </div><!-- End blog author bio -->
+            </div>End blog author bio -->
 
-            <div class="blog-comments">
+            <!-- <div class="blog-comments">
 
               <h4 class="comments-count">8 Comments</h4>
 
@@ -136,9 +100,9 @@
                   Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
                 </p>
 
-              </div><!-- End comment #1 -->
+              </div>End comment #1 -->
 
-              <div id="comment-2" class="comment clearfix">
+              <!-- <div id="comment-2" class="comment clearfix">
                 <img src="assets/img/comments-2.jpg" class="comment-img  float-left" alt="">
                 <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="icofont-reply"></i> Reply</a></h5>
                 <time datetime="2020-01-01">01 Jan, 2020</time>
@@ -164,13 +128,15 @@
                     <time datetime="2020-01-01">01 Jan, 2020</time>
                     <p>
                       Et dignissimos impedit nulla et quo distinctio ex nemo. Omnis quia dolores cupiditate et. Ut unde qui eligendi sapiente omnis ullam. Placeat porro est commodi est officiis voluptas repellat quisquam possimus. Perferendis id consectetur necessitatibus.
-                    </p>
+                    </p> -->
 
-                  </div><!-- End comment reply #2-->
+                  <!-- </div> -->
+                  <!-- End comment reply #2-->
 
-                </div><!-- End comment reply #1-->
-
-              </div><!-- End comment #2-->
+                <!-- </div> -->
+                <!-- End comment reply #1-->
+<!-- 
+              </div>End comment #2
 
               <div id="comment-3" class="comment clearfix">
                 <img src="assets/img/comments-5.jpg" class="comment-img  float-left" alt="">
@@ -181,9 +147,10 @@
                   Non aut et et esse qui sit modi neque. Exercitationem et eos aspernatur. Ea est consequuntur officia beatae ea aut eos soluta. Non qui dolorum voluptatibus et optio veniam. Quam officia sit nostrum dolorem.
                 </p>
 
-              </div><!-- End comment #3 -->
+              </div> -->
+              <!-- End comment #3 -->
 
-              <div id="comment-4" class="comment clearfix">
+              <!-- <div id="comment-4" class="comment clearfix">
                 <img src="assets/img/comments-6.jpg" class="comment-img  float-left" alt="">
                 <h5><a href="">Kay Duggan</a> <a href="#" class="reply"><i class="icofont-reply"></i> Reply</a></h5>
                 <time datetime="2020-01-01">01 Jan, 2020</time>
@@ -191,9 +158,10 @@
                   Dolorem atque aut. Omnis doloremque blanditiis quia eum porro quis ut velit tempore. Cumque sed quia ut maxime. Est ad aut cum. Ut exercitationem non in fugiat.
                 </p>
 
-              </div><!-- End comment #4 -->
+              </div> -->
+              <!-- End comment #4 -->
 
-              <div class="reply-form">
+              <!-- <div class="reply-form">
                 <h4>Leave a Reply</h4>
                 <p>Your email address will not be published. Required fields are marked * </p>
                 <form action="">
@@ -219,11 +187,13 @@
 
                 </form>
 
-              </div>
+              </div> -->
 
-            </div><!-- End blog comments -->
+            <!-- </div> -->
+            <!-- End blog comments -->
 
-          </div><!-- End blog entries list -->
+          </div>
+          <!-- End blog entries list -->
 
           <div class="col-lg-4">
 
@@ -238,20 +208,23 @@
 
               </div><!-- End sidebar search formn-->
 
-              <h3 class="sidebar-title">Categories</h3>
+              <h3 class="sidebar-title">Kategori</h3>
               <div class="sidebar-item categories">
                 <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
+                  <?php foreach($categories as $category): ?>
+                  <li><a href="<?= base_url()?>artikel/kategoti/<?= $category['name'];?>"><?= $category['name'];?></a></li>
+                  <?php endforeach;?>
+                  <!-- <li><a href="#">Lifestyle <span>(12)</span></a></li>
                   <li><a href="#">Travel <span>(5)</span></a></li>
                   <li><a href="#">Design <span>(22)</span></a></li>
                   <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
+                  <li><a href="#">Educaion <span>(14)</span></a></li> -->
                 </ul>
 
-              </div><!-- End sidebar categories-->
+              </div>
+              <!-- End sidebar categories-->
 
-              <h3 class="sidebar-title">Recent Posts</h3>
+              <!-- <h3 class="sidebar-title">Recent Posts</h3>
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
                   <img src="assets/img/blog-recent-1.jpg" alt="">
@@ -283,8 +256,9 @@
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
-              </div><!-- End sidebar recent posts-->
-
+              </div> -->
+              <!-- End sidebar recent posts-->
+<!-- 
               <h3 class="sidebar-title">Tags</h3>
               <div class="sidebar-item tags">
                 <ul>
@@ -302,9 +276,11 @@
                   <li><a href="#">Marketing</a></li>
                 </ul>
 
-              </div><!-- End sidebar tags-->
+              </div> -->
+              <!-- End sidebar tags-->
 
-            </div><!-- End sidebar -->
+            </div>
+            <!-- End sidebar -->
 
           </div><!-- End blog sidebar -->
 
