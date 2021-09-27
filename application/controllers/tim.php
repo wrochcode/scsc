@@ -2,11 +2,16 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 
-class about_us extends CI_Controller
+class tim extends CI_Controller
 {
-    public function index()
+    public function __construct()
     {
-        $data['title'] = "Tentang kami";
+        parent::__construct();
+        
+    }
+
+    public function index(){
+        $data['title'] = "Tim SCSC";
         // var_dump();
         $dataPenunjuk = $this->session->userdata('email');
         $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
@@ -47,10 +52,6 @@ class about_us extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['logo'] = $tempVar;
         
-        $tempVar = $this->scsc->getData("profil",array('name'=>'title'));
-        $tempVar = $tempVar[0]["value"];
-        $data['title'] = $tempVar;
-        
         $tempVar = $this->scsc->getData("profil",array('name'=>'singkatan'));
         $tempVar = $tempVar[0]["value"];
         $data['singkatan'] = $tempVar;
@@ -86,41 +87,39 @@ class about_us extends CI_Controller
         $tempVar = $this->scsc->getData("profil",array('name'=>'linkedin'));
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
-        
-        $tempVar = $this->scsc->getData("profil",array('name'=>'visi'));
-        $tempVar = $tempVar[0]["value"];
-        $data['visi'] = $tempVar;
-        
-        $tempVar = $this->scsc->getData("profil",array('name'=>'misi'));
-        $tempVar = $tempVar[0]["value"];
-        $data['misi'] = $tempVar;
-        
-        $tempVar = $this->scsc->getData("profil",array('name'=>'tentang'));
-        $tempVar = $tempVar[0]["value"];
-        $data['tentang'] = $tempVar;
-        
-        $tempVar = $this->scsc->getData("profil",array('name'=>'photo'));
-        $tempVar = $tempVar[0]["value"];
-        $data['photo'] = $tempVar;
 
         $tempVar = $this->scsc->getAll("corefitur");
         $data['mainfitur'] = $tempVar;
 
-        $tempVar = $this->scsc->getData("service",array('status'=>'1'));
-        $data['services'] = $tempVar;
+        $tempVar = $this->scsc->getData("user",array('role'=>'1'));
+        $data['role1'] = $tempVar;
 
-        $tempVar = $this->scsc->getData("testimoni",array('status'=>'1'));
-        $data['totaltestimoni'] = count($tempVar);
-        $data['testimoni'] = $tempVar;
+        $tempVar = $this->scsc->getData("user",array('role'=>'2'));
+        $data['role2'] = $tempVar;
 
-        $data['link'] = "Tentang Kami";
+        $tempVar = $this->scsc->getData("user",array('role'=>'3'));
+        $data['role3'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("user",array('role'=>'4'));
+        $data['role4'] = $tempVar;
+
+        $tempVar = $this->scsc->getData("user",array('role'=>'5'));
+        $data['role5'] = $tempVar;
+        
+        $tempVar = $this->scsc->getData("user",array('role'=>'6'));
+        $data['role6'] = $tempVar;
+
+        // $tempVar = $this->scsc->getFew("testimoni", "ASC", 3);
+        // $data['testimoni'] = $tempVar;
+
+        $data['link'] = "Tim SCSC";
+        
         $data['active'] = 0;
         $data['dd'] = 2;
-        $data['dda'] = 1;
-
+        $data['dda'] = 2;
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
-        $this->load->view('home/about', $data);
+        $this->load->view('home/tim', $data);
         $this->load->view('home/footer', $data);
     }
 }

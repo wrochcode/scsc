@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2021 at 08:15 PM
+-- Generation Time: Sep 27, 2021 at 04:25 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -148,6 +148,23 @@ CREATE TABLE `item` (
   `description` varchar(191) NOT NULL,
   `price` int(191) NOT NULL,
   `status` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `job`
+--
+
+CREATE TABLE `job` (
+  `id` int(191) NOT NULL,
+  `id_user` int(191) NOT NULL,
+  `role` varchar(191) NOT NULL,
+  `quotes` text NOT NULL,
+  `twitter` varchar(191) NOT NULL,
+  `facebook` varchar(191) NOT NULL,
+  `instagram` varchar(191) NOT NULL,
+  `linkedin` varchar(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -465,9 +482,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `photo`, `email`, `telp`, `birthday`, `jobs`, `gender`, `address`, `role`, `status`, `complete`, `password`) VALUES
-(1, '', '', 'trial@scsc.com', '', '', '', '', '', 5, '', 0, 'ed68b744cf92725fd85bc9501022c4e0'),
-(20, '', '', 'coba@coba.com', '', '', '', '', '', 5, '', 0, 'c3ec0f7b054e729c5a716c8125839829'),
-(21, '', '', 'scsc@scsc.com', '', '', '', '', '', 5, '', 0, 'ed68b744cf92725fd85bc9501022c4e0');
+(1, '', '', 'trial@scsc.com', '', '', '', '', '', 6, '', 0, 'ed68b744cf92725fd85bc9501022c4e0'),
+(20, '', '', 'coba@coba.com', '', '', '', '', '', 6, '', 0, 'c3ec0f7b054e729c5a716c8125839829'),
+(21, '', '', 'scsc@scsc.com', '', '', '', '', '', 6, '', 0, 'ed68b744cf92725fd85bc9501022c4e0'),
+(22, 'Wahyu Rochman Bantoro', '', '111201811229@mhs.dinus.ac.id', '', '', '', '', '', 6, '', 0, '411c451fa50ccb4a60206a83c8d5d8a4'),
+(23, 'naruto', '', 'naruto@naruto.com', '', '', '', '', '', 6, '', 0, 'cf9ee5bcb36b4936dd7064ee9b2f139e'),
+(24, 'Rahim kun', '', '111201811255@mhs.dinus.ac.id', '', '', '', '', '', 6, '', 0, '543378fb36a83810ded2d725f2b6c883'),
+(25, 'Komting cacad sama', '', '111201811215@mhs.dinus.ac.id', '', '', '', '', '', 6, '', 0, 'd81d658f7fb3fca03ea5e74f787f1f51');
 
 -- --------------------------------------------------------
 
@@ -533,6 +554,12 @@ ALTER TABLE `homemenuabout`
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `job`
+--
+ALTER TABLE `job`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -666,6 +693,12 @@ ALTER TABLE `item`
   MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `job`
+--
+ALTER TABLE `job`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `mainsidebar`
 --
 ALTER TABLE `mainsidebar`
@@ -741,7 +774,7 @@ ALTER TABLE `testimoni`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user login history`

@@ -10,7 +10,7 @@ class register extends CI_Controller
         if($this->session->userdata('status') == "login" ){
             $tempVar = $this->scsc->getData("user",array('email'=>$this->session->userdata('email')));
             $tempVar = $tempVar[0]["role"];
-            if($tempVar == '5'){
+            if($tempVar == '6'){
                 redirect(base_url());
             }else{
                 redirect('akunsaya');
@@ -51,7 +51,7 @@ class register extends CI_Controller
                 $this->session->set_flashdata('message', '<div class="alert alert-success text-center">Your account has been created, please login for go in your account. Thank you</div>');
                 $submit_data = array(	
                                 'email' => $email,
-                            	'role' => 5,
+                            	'role' => 6,
                                 'password' => md5($pass));
                 $this->scsc->registerUser($submit_data);
                 redirect('login');
