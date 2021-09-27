@@ -1,36 +1,39 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Artikel extends CI_Controller
+class artikel extends CI_Controller
 {
     public function index()
     {
         $data['title'] = "SCSC - Artikel";
         // var_dump();
         $dataPenunjuk = $this->session->userdata('email');
-        $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
-        if($tempVar[0]["name"] != NULL):
-            $sumVar = strlen($tempVar[0]["name"]);
-            $stop=0;
-            $hasil=$tempVar[0]["name"][1];
-            for($i=0;$i<$sumVar;$i++):
-                // echo $tempVar[0]["name"][$i];
-                if($tempVar[0]["name"][$i] == " " && $stop == 0):
-                    $stop = 1;
-                    $hasil = $i;
-                endif;
+        
+        if(isset($dataPenunjuk)):
+            $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
+            if($tempVar[0]["name"] != NULL):
+                $sumVar = strlen($tempVar[0]["name"]);
+                $stop=0;
+                $hasil=$tempVar[0]["name"][1];
+                for($i=0;$i<$sumVar;$i++):
+                    // echo $tempVar[0]["name"][$i];
+                    if($tempVar[0]["name"][$i] == " " && $stop == 0):
+                        $stop = 1;
+                        $hasil = $i;
+                    endif;
 
-            endfor;
-            $stop = $tempVar[0]["name"][0];
-            for($i=1;$i<$hasil;$i++):
-                $stop = $stop.$tempVar[0]["name"][$i];
-            endfor;
-            // $tempVar = $tempVar[0]["name"];
-            $tempVar = $stop;
-        else:
-            $tempVar = $tempVar[0]["email"];
+                endfor;
+                $stop = $tempVar[0]["name"][0];
+                for($i=1;$i<$hasil;$i++):
+                    $stop = $stop.$tempVar[0]["name"][$i];
+                endfor;
+                // $tempVar = $tempVar[0]["name"];
+                $tempVar = $stop;
+            else:
+                $tempVar = $tempVar[0]["email"];
+            endif;
+            $data['emailuser'] = $tempVar;
         endif;
-        $data['emailuser'] = $tempVar;
 
         $tempVar = $this->scsc->getAll("homemenu");
         $data['menu'] = $tempVar;
@@ -108,29 +111,32 @@ class Artikel extends CI_Controller
         $data['title'] = "SCSC - Artikel - Detail";
         // var_dump();
         $dataPenunjuk = $this->session->userdata('email');
-        $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
-        if($tempVar[0]["name"] != NULL):
-            $sumVar = strlen($tempVar[0]["name"]);
-            $stop=0;
-            $hasil=$tempVar[0]["name"][1];
-            for($i=0;$i<$sumVar;$i++):
-                // echo $tempVar[0]["name"][$i];
-                if($tempVar[0]["name"][$i] == " " && $stop == 0):
-                    $stop = 1;
-                    $hasil = $i;
-                endif;
+        
+        if(isset($dataPenunjuk)):
+            $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
+            if($tempVar[0]["name"] != NULL):
+                $sumVar = strlen($tempVar[0]["name"]);
+                $stop=0;
+                $hasil=$tempVar[0]["name"][1];
+                for($i=0;$i<$sumVar;$i++):
+                    // echo $tempVar[0]["name"][$i];
+                    if($tempVar[0]["name"][$i] == " " && $stop == 0):
+                        $stop = 1;
+                        $hasil = $i;
+                    endif;
 
-            endfor;
-            $stop = $tempVar[0]["name"][0];
-            for($i=1;$i<$hasil;$i++):
-                $stop = $stop.$tempVar[0]["name"][$i];
-            endfor;
-            // $tempVar = $tempVar[0]["name"];
-            $tempVar = $stop;
-        else:
-            $tempVar = $tempVar[0]["email"];
+                endfor;
+                $stop = $tempVar[0]["name"][0];
+                for($i=1;$i<$hasil;$i++):
+                    $stop = $stop.$tempVar[0]["name"][$i];
+                endfor;
+                // $tempVar = $tempVar[0]["name"];
+                $tempVar = $stop;
+            else:
+                $tempVar = $tempVar[0]["email"];
+            endif;
+            $data['emailuser'] = $tempVar;
         endif;
-        $data['emailuser'] = $tempVar;
 
         $tempVar = $this->scsc->getAll("homemenu");
         $data['menu'] = $tempVar;

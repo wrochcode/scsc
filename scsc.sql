@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2021 at 04:25 AM
+-- Generation Time: Sep 27, 2021 at 08:23 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -291,11 +291,13 @@ CREATE TABLE `role` (
 --
 
 INSERT INTO `role` (`id`, `name`, `value`, `description`) VALUES
-(1, 'CEO', 1, 'Pemimpin Perus'),
-(2, 'Admin 1', 2, 'Pengelola admin 2'),
-(3, 'Admin 2', 3, 'Pengelola invoice masuk'),
-(4, 'Teknisi', 4, 'Teknisis dari Service Computer Semarang City'),
-(5, 'User', 5, 'Pelanggan tercinta Service Computer Semarang City');
+(1, 'CEO', 1, 'Chief Excecutif Officer'),
+(2, 'CTO', 2, 'Chief Technical Officer'),
+(3, 'CMO', 3, 'Chief Marketing Officer'),
+(4, 'Content Creator', 4, 'Content Creator'),
+(5, 'Teknisi', 5, 'Teknisis dari Service Computer Semarang City'),
+(6, 'Admin Invoice', 6, 'admin confirmasi'),
+(7, 'User', 7, 'User Tercinta');
 
 -- --------------------------------------------------------
 
@@ -482,13 +484,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `photo`, `email`, `telp`, `birthday`, `jobs`, `gender`, `address`, `role`, `status`, `complete`, `password`) VALUES
-(1, '', '', 'trial@scsc.com', '', '', '', '', '', 6, '', 0, 'ed68b744cf92725fd85bc9501022c4e0'),
-(20, '', '', 'coba@coba.com', '', '', '', '', '', 6, '', 0, 'c3ec0f7b054e729c5a716c8125839829'),
-(21, '', '', 'scsc@scsc.com', '', '', '', '', '', 6, '', 0, 'ed68b744cf92725fd85bc9501022c4e0'),
-(22, 'Wahyu Rochman Bantoro', '', '111201811229@mhs.dinus.ac.id', '', '', '', '', '', 6, '', 0, '411c451fa50ccb4a60206a83c8d5d8a4'),
-(23, 'naruto', '', 'naruto@naruto.com', '', '', '', '', '', 6, '', 0, 'cf9ee5bcb36b4936dd7064ee9b2f139e'),
-(24, 'Rahim kun', '', '111201811255@mhs.dinus.ac.id', '', '', '', '', '', 6, '', 0, '543378fb36a83810ded2d725f2b6c883'),
-(25, 'Komting cacad sama', '', '111201811215@mhs.dinus.ac.id', '', '', '', '', '', 6, '', 0, 'd81d658f7fb3fca03ea5e74f787f1f51');
+(1, '', '', 'trial@scsc.com', '', '', '', '', '', 7, '', 1, 'ed68b744cf92725fd85bc9501022c4e0'),
+(20, '', '', 'coba@coba.com', '', '', '', '', '', 6, '', 1, 'c3ec0f7b054e729c5a716c8125839829'),
+(21, '', '', 'scsc@scsc.com', '', '', '', '', '', 5, '', 1, 'ed68b744cf92725fd85bc9501022c4e0'),
+(22, 'Wahyu Rochman Bantoro', '', '111201811229@mhs.dinus.ac.id', '', '', '', '', '', 2, '', 1, '411c451fa50ccb4a60206a83c8d5d8a4'),
+(23, 'naruto', '', 'naruto@naruto.com', '', '', '', '', '', 4, '', 1, 'cf9ee5bcb36b4936dd7064ee9b2f139e'),
+(24, 'Rahim kun', '', '111201811255@mhs.dinus.ac.id', '', '', '', '', '', 1, '', 1, '543378fb36a83810ded2d725f2b6c883'),
+(25, 'Komting cacad sama', '', '111201811215@mhs.dinus.ac.id', '', '', '', '', '', 3, '', 1, 'd81d658f7fb3fca03ea5e74f787f1f51');
 
 -- --------------------------------------------------------
 
@@ -726,7 +728,7 @@ ALTER TABLE `profil`
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `roleaccess`

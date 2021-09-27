@@ -208,7 +208,7 @@
                                 <i class="fas fa-bolt"></i> Activities
                             </a> -->
                             <a href="<?= base_url();?>" class="dropdown-item has-icon">
-                                <i class="fas fa-cog"></i> <?= $singkatan;?>
+                                <i class="fas fa-home"></i> <?= $singkatan;?>
                             </a>
                             <!-- <div class="dropdown-divider"></div> -->
                             <a href="<?php echo base_url(); ?>akunsaya/logout" class="dropdown-item has-icon text-danger">

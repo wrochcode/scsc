@@ -10,7 +10,7 @@ class login extends CI_Controller
         if($this->session->userdata('status') == "login" ){
             $tempVar = $this->scsc->getData("user",array('email'=>$this->session->userdata('email')));
             $tempVar = $tempVar[0]["role"];
-            if($tempVar == '6'){
+            if($tempVar == '7'){
                 redirect(base_url());
             }else{
                 redirect('akunsaya');
