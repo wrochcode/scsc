@@ -142,7 +142,6 @@ class service extends CI_Controller
             // echo $data['menu'][5]['value'];
         endif;
         
-        
         $tempVar = $this->scsc->getAll("homemenuabout");
         $data['submenu'] = $tempVar;
 

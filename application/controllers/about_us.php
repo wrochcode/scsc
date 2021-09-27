@@ -36,9 +36,12 @@ class about_us extends CI_Controller
             $data['emailuser'] = $tempVar;
         endif;
         
-        
-        $tempVar = $this->scsc->getAll("homemenuabout");
-        $data['submenu'] = $tempVar;
+        $tempVar = $this->scsc->getAll("homemenu");
+        $data['menu'] = $tempVar;
+        if(isset($dataPenunjuk)):
+            $data['menu'][count($data['menu'])-1]['name']=$data['emailuser'];
+            // echo $data['menu'][5]['value'];
+        endif;
 
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
         $tempVar = $tempVar[0]["value"];
