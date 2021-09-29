@@ -19,10 +19,9 @@ class tim extends CI_Controller
             $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
             if($tempVar[0]["name"] != NULL):
                 $sumVar = strlen($tempVar[0]["name"]);
-                $stop=0;
+                $stop = 0;
                 $hasil = $sumVar;
-                for($i=0;$i<$sumVar;$i++):
-                    // echo $tempVar[0]["name"][$i];
+                for($i = 0; $i<$sumVar; $i++):
                     if($tempVar[0]["name"][$i] == " " && $stop == 0):
                         $stop = 1;
                         $hasil = $i;
@@ -33,7 +32,6 @@ class tim extends CI_Controller
                 for($i=1;$i<$hasil;$i++):
                     $stop = $stop.$tempVar[0]["name"][$i];
                 endfor;
-                // $tempVar = $tempVar[0]["name"];
                 $tempVar = $stop;
             else:
                 $tempVar = $tempVar[0]["email"];
