@@ -92,14 +92,34 @@ class tim extends CI_Controller
         $tempVar = $this->scsc->getAll("corefitur");
         $data['mainfitur'] = $tempVar;
 
-        $tempVar = $this->scsc->getData("user",array('role'=>'1'));
-        $data['role1'] = $tempVar;
+        $tempVar = $this->scsc->getData("user",array('role'=>1));
+        $data['role1'] = $tempVar[0]['name'];
+        $data['twitter1'] = $tempVar[0]['twitter'];
+        $data['facebook1'] = $tempVar[0]['facebook'];
+        $data['instagram1'] = $tempVar[0]['instagram'];
+        $data['linkedin1'] = $tempVar[0]['linkedin'];
+        // var_dump($data['role1']);
+        $tempVar = $this->scsc->getData("job",array('id_user'=>$tempVar[0]['id']));
+        $data['quotes1'] = $tempVar[0]['quotes'];
+
 
         $tempVar = $this->scsc->getData("user",array('role'=>'2'));
-        $data['role2'] = $tempVar;
+        $data['role2'] = $tempVar[0]['name'];
+        $data['twitter2'] = $tempVar[0]['twitter'];
+        $data['facebook2'] = $tempVar[0]['facebook'];
+        $data['instagram2'] = $tempVar[0]['instagram'];
+        $data['linkedin2'] = $tempVar[0]['linkedin'];
+        $tempVar = $this->scsc->getData("job",array('id_user'=>$tempVar[0]['id']));
+        $data['quotes2'] = $tempVar[0]['quotes'];
 
         $tempVar = $this->scsc->getData("user",array('role'=>'3'));
-        $data['role3'] = $tempVar;
+        $data['role3'] = $tempVar[0]['name'];
+        $data['twitter3'] = $tempVar[0]['twitter'];
+        $data['facebook3'] = $tempVar[0]['facebook'];
+        $data['instagram3'] = $tempVar[0]['instagram'];
+        $data['linkedin3'] = $tempVar[0]['linkedin'];
+        $tempVar = $this->scsc->getData("job",array('id_user'=>$tempVar[0]['id']));
+        $data['quotes3'] = $tempVar[0]['quotes'];
 
         $tempVar = $this->scsc->getData("user",array('role'=>'4'));
         $data['role4'] = $tempVar;
@@ -112,6 +132,8 @@ class tim extends CI_Controller
 
         // $tempVar = $this->scsc->getFew("testimoni", "ASC", 3);
         // $data['testimoni'] = $tempVar;
+        $tempVar = $this->scsc->getData("service",array('status'=>'1'));
+        $data['services'] = $tempVar;
 
         $data['link'] = "Tim SCSC";
         

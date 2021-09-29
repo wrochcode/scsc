@@ -96,7 +96,6 @@ class shop extends CI_Controller
         $data['produkcategory'] = $tempVar;
 
         $tempVar = $this->scsc->getData("service",array('status'=>'1'));
-        // $tempVar = $tempVar[0]["value"];
         $data['services'] = $tempVar;
         // var_dump($data['produk']);
         // end show data
