@@ -20,8 +20,8 @@ class akunsaya extends CI_Controller
         $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
         if($tempVar[0]["name"] != NULL):
             $sumVar = strlen($tempVar[0]["name"]);
-            $stop=0;
-            $hasil=$tempVar[0]["name"][1];
+            $stop = 0;
+            $hasil = $sumVar;
             for($i=0;$i<$sumVar;$i++):
                 // echo $tempVar[0]["name"][$i];
                 if($tempVar[0]["name"][$i] == " " && $stop == 0):

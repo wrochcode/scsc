@@ -14,7 +14,7 @@ class service extends CI_Controller
             if($tempVar[0]["name"] != NULL):
                 $sumVar = strlen($tempVar[0]["name"]);
                 $stop=0;
-                $hasil=$tempVar[0]["name"][1];
+                $hasil = $sumVar;
                 for($i=0;$i<$sumVar;$i++):
                     // echo $tempVar[0]["name"][$i];
                     if($tempVar[0]["name"][$i] == " " && $stop == 0):
@@ -114,7 +114,7 @@ class service extends CI_Controller
             if($tempVar[0]["name"] != NULL):
                 $sumVar = strlen($tempVar[0]["name"]);
                 $stop=0;
-                $hasil=$tempVar[0]["name"][1];
+                $hasil = $sumVar;
                 for($i=0;$i<$sumVar;$i++):
                     // echo $tempVar[0]["name"][$i];
                     if($tempVar[0]["name"][$i] == " " && $stop == 0):

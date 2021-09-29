@@ -30,7 +30,7 @@
                 </div>
 
                 <h2 class="entry-title">
-                  <a href="<?= base_url().'artikel/'.$article['slug'];?>"><?= $article['title'];?></a>
+                  <a href="<?= base_url().'artikel/detail/'.$article['slug'];?>"><?= $article['title'];?></a>
                 </h2>
 
                 <div class="entry-meta">
