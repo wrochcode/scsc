@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2021 at 08:23 AM
+-- Generation Time: Oct 05, 2021 at 10:19 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -43,10 +43,10 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id`, `title`, `slug`, `picture`, `author`, `text`, `category`, `status`) VALUES
-(1, 'Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia', 'Dolorum-optio-tempore-voluptas-dignissimos-cumque-fuga-qui-quibusdam-quia', 'blog-1.jpg', 'John Doe', 'Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.\r\n                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.', 'Business', 1),
-(2, 'Nisi magni odit consequatur autem nulla dolorem', 'Nisi-magni-odit-consequatur-autem-nulla-dolorem', 'blog-2.jpg', 'John Doe', 'Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.\r\n                  Ad impedit qui officiis est in non aliquid veniam laborum. Id ipsum qui aut. Sit aliquam et quia molestias laboriosam. Tempora nam odit omnis eum corrupti qui aliquid excepturi molestiae. Facilis et sint quos sed voluptas. Maxime sed tempore enim omnis non alias odio quos distinctio.', 'Business', 1),
-(3, 'Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.', 'Possimus-soluta-ut-id-suscipit-ea-ut.-In-quo-quia-et-soluta-libero-sit-sint.', 'blog-3.jpg', 'John Doe', 'Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.\r\n                  Doloremque est saepe laborum aut. Ipsa cupiditate ex harum at recusandae nesciunt. Ut dolores velit.', 'Business', 1),
-(4, 'Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.', 'Non-rem-rerum-nam-cum-quo-minus.-Dolor-distinctio-deleniti-explicabo-eius-exercitationem.', 'blog-4.jpg', 'John Doe', 'Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.\r\n                  Quia sed sunt. Ea asperiores expedita et et delectus voluptates rerum. Id saepe ut itaque quod qui voluptas nobis porro rerum. Quam quia nesciunt qui aut est non omnis. Inventore occaecati et quaerat magni itaque nam voluptas. Voluptatem ducimus sint id earum ut nesciunt sed corrupti nemo.', 'Business', 1);
+(1, 'Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia', 'Dolorum-optio-tempore-voluptas-dignissimos-cumque-fuga-qui-quibusdam-quia', 'blog-1.jpg', 'John Doe', 'Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.\r\n                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.', 'Update-Teknologi', 1),
+(2, 'Nisi magni odit consequatur autem nulla dolorem', 'Nisi-magni-odit-consequatur-autem-nulla-dolorem', 'blog-2.jpg', 'John Doe', 'Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.\r\n                  Ad impedit qui officiis est in non aliquid veniam laborum. Id ipsum qui aut. Sit aliquam et quia molestias laboriosam. Tempora nam odit omnis eum corrupti qui aliquid excepturi molestiae. Facilis et sint quos sed voluptas. Maxime sed tempore enim omnis non alias odio quos distinctio.', 'Update-Teknologi', 1),
+(3, 'Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.', 'Possimus-soluta-ut-id-suscipit-ea-ut.-In-quo-quia-et-soluta-libero-sit-sint.', 'blog-3.jpg', 'John Doe', 'Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.\r\n                  Doloremque est saepe laborum aut. Ipsa cupiditate ex harum at recusandae nesciunt. Ut dolores velit.', 'Tips-and-Trik', 1),
+(4, 'Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.', 'Non-rem-rerum-nam-cum-quo-minus.-Dolor-distinctio-deleniti-explicabo-eius-exercitationem.', 'blog-4.jpg', 'John Doe', 'Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.\r\n                  Quia sed sunt. Ea asperiores expedita et et delectus voluptates rerum. Id saepe ut itaque quod qui voluptas nobis porro rerum. Quam quia nesciunt qui aut est non omnis. Inventore occaecati et quaerat magni itaque nam voluptas. Voluptatem ducimus sint id earum ut nesciunt sed corrupti nemo.', 'Update-Teknologi', 1);
 
 -- --------------------------------------------------------
 
@@ -56,16 +56,17 @@ INSERT INTO `artikel` (`id`, `title`, `slug`, `picture`, `author`, `text`, `cate
 
 CREATE TABLE `artikel_category` (
   `id` int(191) NOT NULL,
-  `name` varchar(191) NOT NULL
+  `name` varchar(191) NOT NULL,
+  `slug` varchar(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `artikel_category`
 --
 
-INSERT INTO `artikel_category` (`id`, `name`) VALUES
-(1, 'Tips and Trik'),
-(2, 'Update Teknologi');
+INSERT INTO `artikel_category` (`id`, `name`, `slug`) VALUES
+(1, 'Tips and Trik', 'Tips-and-Trik'),
+(2, 'Update Teknologi', 'Update-Teknologi');
 
 -- --------------------------------------------------------
 
@@ -159,13 +160,17 @@ CREATE TABLE `item` (
 CREATE TABLE `job` (
   `id` int(191) NOT NULL,
   `id_user` int(191) NOT NULL,
-  `role` varchar(191) NOT NULL,
-  `quotes` text NOT NULL,
-  `twitter` varchar(191) NOT NULL,
-  `facebook` varchar(191) NOT NULL,
-  `instagram` varchar(191) NOT NULL,
-  `linkedin` varchar(191) NOT NULL
+  `quotes` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `job`
+--
+
+INSERT INTO `job` (`id`, `id_user`, `quotes`) VALUES
+(1, 24, 'Jangan pernah nginep dihotel dikota kamu tinggal, boros cuwg!'),
+(2, 22, 'Remember everyday \"you\'re should be productive mindset, you must grow from yesterday and then you will be success\"'),
+(3, 25, 'Rakus itu penting, tapi jangan serakus itu. Yang penting pas ditangan');
 
 -- --------------------------------------------------------
 
@@ -176,6 +181,7 @@ CREATE TABLE `job` (
 CREATE TABLE `mainsidebar` (
   `id` int(191) NOT NULL,
   `name` varchar(191) NOT NULL,
+  `role` int(191) NOT NULL,
   `status` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -183,10 +189,24 @@ CREATE TABLE `mainsidebar` (
 -- Dumping data for table `mainsidebar`
 --
 
-INSERT INTO `mainsidebar` (`id`, `name`, `status`) VALUES
-(1, 'General', 1),
-(2, 'Transaksi', 1),
-(3, 'Refreshing', 0);
+INSERT INTO `mainsidebar` (`id`, `name`, `role`, `status`) VALUES
+(1, 'General', 1, 1),
+(2, 'General', 2, 1),
+(3, 'General', 3, 1),
+(4, 'General', 4, 1),
+(5, 'General', 5, 1),
+(6, 'General', 6, 1),
+(7, 'General', 7, 1),
+(8, 'Karyawan', 1, 1),
+(9, 'Teknisi', 2, 1),
+(10, 'Invoice', 3, 1),
+(11, 'Artikel', 1, 1),
+(12, 'Artikel', 4, 1),
+(13, 'Teknisi', 5, 1),
+(14, 'Invoice', 6, 1),
+(15, 'Quiz', 3, 1),
+(16, 'Transaksi', 7, 1),
+(17, 'Refreshing', 7, 0);
 
 -- --------------------------------------------------------
 
@@ -268,10 +288,11 @@ INSERT INTO `profil` (`id`, `name`, `value`, `description`) VALUES
 (9, 'instagram', 'https://www.instagram.com/w.roch19/', 'social media instagram official'),
 (10, 'skype', '#', 'social media skype official'),
 (11, 'linkedin', 'https://www.linkedin.com/in/wahyu-rochman-bantoro/', 'social media linkedin official'),
-(12, 'Misi', 'Untuk berkembang jangan ada halangan', 'misi dari perusahaan'),
-(13, 'Visi', 'memeberikan kemudahan dalam memperbaiki perangkat komputer di era digitalisasi ini', 'visi dibentuknya perusahaan'),
+(12, 'misi', 'Untuk berkembang jangan ada halangan', 'misi dari perusahaan'),
+(13, 'visi', 'memeberikan kemudahan dalam memperbaiki perangkat komputer di era digitalisasi ini', 'visi dibentuknya perusahaan'),
 (14, 'Tentang', 'Jasa service ini didirikan oleh mahasiswa udinus dengan mata kuliah technopreneur dengan upaya mendapat nilai paling baik diantara kelompok lain!', 'Tentang perusahaan'),
-(15, 'photo', 'main-photo.jpg', 'photo orang service');
+(15, 'photo', 'main-photo.jpg', 'photo orang service'),
+(16, 'sop', '1.Pengguna dengan ini menyatakan bahwa pengguna adalah orang yang cakap dan mampu untuk mengikatkan dirinya dalam sebuah perjanjian yang sah menurut hukum.<br>2.Tokopedia tidak memungut biaya pendaftaran kepada Pengguna.', 'Standard Operating Procedure Perusahaan');
 
 -- --------------------------------------------------------
 
@@ -294,9 +315,9 @@ INSERT INTO `role` (`id`, `name`, `value`, `description`) VALUES
 (1, 'CEO', 1, 'Chief Excecutif Officer'),
 (2, 'CTO', 2, 'Chief Technical Officer'),
 (3, 'CMO', 3, 'Chief Marketing Officer'),
-(4, 'Content Creator', 4, 'Content Creator'),
+(4, 'Article Creator', 4, 'Article Creator'),
 (5, 'Teknisi', 5, 'Teknisis dari Service Computer Semarang City'),
-(6, 'Admin Invoice', 6, 'admin confirmasi'),
+(6, 'Admin Invoice', 6, 'Admin'),
 (7, 'User', 7, 'User Tercinta');
 
 -- --------------------------------------------------------
@@ -391,7 +412,8 @@ INSERT INTO `sidebar` (`id`, `name`, `status`, `description`) VALUES
 (5, 'Service', 1, 'Menampilkan transaksi dan riwayat status service user'),
 (6, 'Item', 1, 'Menampilkan transaksi dan riwayat pembelian item service user'),
 (7, 'Voucher', 0, 'Menampilkan voucher yang tersedia'),
-(8, 'Game', 0, 'Memberikan game berguna dapat potongan harga dengan SC-point yang terkumpul');
+(8, 'Game', 0, 'Memberikan game berguna dapat potongan harga dengan SC-point yang terkumpul'),
+(9, 'karyawan', 1, 'Manajemen karyawan');
 
 -- --------------------------------------------------------
 
@@ -416,22 +438,50 @@ CREATE TABLE `sidebarcategory` (
   `id` int(191) NOT NULL,
   `name` varchar(191) NOT NULL,
   `parent` int(191) NOT NULL,
-  `child` int(191) NOT NULL
+  `child` int(191) NOT NULL,
+  `role` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sidebarcategory`
 --
 
-INSERT INTO `sidebarcategory` (`id`, `name`, `parent`, `child`) VALUES
-(1, 'General', 1, 1),
-(2, 'General', 1, 2),
-(3, 'General', 1, 3),
-(4, 'Transaksi', 1, 4),
-(5, 'Transaksi', 2, 5),
-(6, 'Transaksi', 2, 6),
-(7, 'Transaksi', 2, 7),
-(8, 'Refreshing', 3, 8);
+INSERT INTO `sidebarcategory` (`id`, `name`, `parent`, `child`, `role`) VALUES
+(1, 'General', 1, 1, 7),
+(2, 'General', 1, 2, 7),
+(3, 'General', 1, 3, 7),
+(4, 'Transaksi', 1, 4, 7),
+(5, 'Transaksi', 2, 5, 7),
+(6, 'Transaksi', 2, 6, 7),
+(7, 'Transaksi', 2, 7, 7),
+(8, 'Refreshing', 3, 8, 7),
+(11, 'Karyawan', 1, 1, 1),
+(12, 'Teknisi', 1, 1, 2),
+(13, 'Invoice', 1, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `socialmedia`
+--
+
+CREATE TABLE `socialmedia` (
+  `id` int(191) NOT NULL,
+  `id_user` int(191) NOT NULL,
+  `twitter` varchar(191) NOT NULL,
+  `facebook` varchar(191) NOT NULL,
+  `instagram` varchar(191) NOT NULL,
+  `linkedin` varchar(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `socialmedia`
+--
+
+INSERT INTO `socialmedia` (`id`, `id_user`, `twitter`, `facebook`, `instagram`, `linkedin`) VALUES
+(1, 24, 'https://twitter.com/GoziNasuka', 'https://www.facebook.com/gozi.nasuka', 'https://www.instagram.com/gozinasuka/', '#'),
+(2, 22, 'https://twitter.com/excel_shelby', 'https://www.facebook.com/wahyu.rochman.bantoro/', 'https://www.instagram.com/w.roch19/', 'https://www.linkedin.com/in/wahyu-rochman-bantoro/'),
+(3, 25, '#', 'https://www.facebook.com/bagus.duemaks', 'https://www.instagram.com/rivan_istyajie/', '#');
 
 -- --------------------------------------------------------
 
@@ -476,6 +526,10 @@ CREATE TABLE `user` (
   `role` int(191) NOT NULL,
   `status` varchar(191) NOT NULL,
   `complete` int(191) NOT NULL,
+  `twitter` varchar(191) NOT NULL,
+  `instagram` varchar(191) NOT NULL,
+  `facebook` varchar(191) NOT NULL,
+  `linkedin` varchar(191) NOT NULL,
   `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -483,14 +537,16 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `photo`, `email`, `telp`, `birthday`, `jobs`, `gender`, `address`, `role`, `status`, `complete`, `password`) VALUES
-(1, '', '', 'trial@scsc.com', '', '', '', '', '', 7, '', 1, 'ed68b744cf92725fd85bc9501022c4e0'),
-(20, '', '', 'coba@coba.com', '', '', '', '', '', 6, '', 1, 'c3ec0f7b054e729c5a716c8125839829'),
-(21, '', '', 'scsc@scsc.com', '', '', '', '', '', 5, '', 1, 'ed68b744cf92725fd85bc9501022c4e0'),
-(22, 'Wahyu Rochman Bantoro', '', '111201811229@mhs.dinus.ac.id', '', '', '', '', '', 2, '', 1, '411c451fa50ccb4a60206a83c8d5d8a4'),
-(23, 'naruto', '', 'naruto@naruto.com', '', '', '', '', '', 4, '', 1, 'cf9ee5bcb36b4936dd7064ee9b2f139e'),
-(24, 'Rahim kun', '', '111201811255@mhs.dinus.ac.id', '', '', '', '', '', 1, '', 1, '543378fb36a83810ded2d725f2b6c883'),
-(25, 'Komting cacad sama', '', '111201811215@mhs.dinus.ac.id', '', '', '', '', '', 3, '', 1, 'd81d658f7fb3fca03ea5e74f787f1f51');
+INSERT INTO `user` (`id`, `name`, `photo`, `email`, `telp`, `birthday`, `jobs`, `gender`, `address`, `role`, `status`, `complete`, `twitter`, `instagram`, `facebook`, `linkedin`, `password`) VALUES
+(1, '', '', 'trial@scsc.com', '', '', '', '', '', 7, '', 1, '', '', '', '', 'ed68b744cf92725fd85bc9501022c4e0'),
+(20, 'Adhisty Zara', '', 'coba@coba.com', '', '', '', '', '', 6, '', 1, '', '', '', '', 'c3ec0f7b054e729c5a716c8125839829'),
+(21, 'Atta HalilintaR', '', 'scsc@scsc.com', '', '', '', '', '', 6, '', 1, '', '', '', '', 'ed68b744cf92725fd85bc9501022c4e0'),
+(22, 'Wahyu Rochman Bantoro', '', '111201811229@mhs.dinus.ac.id', '', '', '', '', '', 2, '', 1, 'https://twitter.com/excel_shelby', 'https://www.instagram.com/w.roch19/', 'https://www.facebook.com/wahyu.rochman.bantoro/', 'https://www.linkedin.com/in/wahyu-rochman-bantoro/', '411c451fa50ccb4a60206a83c8d5d8a4'),
+(23, 'naruto', '', 'naruto@naruto.com', '', '', '', '', '', 4, '', 1, '', '', '', '', 'cf9ee5bcb36b4936dd7064ee9b2f139e'),
+(24, 'Rahim kun', '', '111201811255@mhs.dinus.ac.id', '', '', '', '', '', 1, '', 1, 'https://twitter.com/GoziNasuka', 'https://www.instagram.com/gozinasuka/', 'https://www.facebook.com/gozi.nasuka', '#', '543378fb36a83810ded2d725f2b6c883'),
+(25, 'Komting cacad sama', '', '111201811215@mhs.dinus.ac.id', '', '', '', '', '', 3, '', 1, '#', 'https://www.instagram.com/rivan_istyajie/', 'https://www.facebook.com/bagus.duemaks', '#', 'd81d658f7fb3fca03ea5e74f787f1f51'),
+(26, 'Sasuke', '', 'sasuke@sasuke.com', '', '', '', '', '', 4, '', 1, '', '', '', '', '93207db25ad357906be2fd0c3f65f3dc'),
+(27, 'sakura', '', 'sakura@sakura.com', '', '', '', '', '', 4, '', 1, '', '', '', '', '149afd631693c895f81e508eb5aaef37');
 
 -- --------------------------------------------------------
 
@@ -631,6 +687,12 @@ ALTER TABLE `sidebarcategory`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `socialmedia`
+--
+ALTER TABLE `socialmedia`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `testimoni`
 --
 ALTER TABLE `testimoni`
@@ -698,13 +760,13 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT for table `job`
 --
 ALTER TABLE `job`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mainsidebar`
 --
 ALTER TABLE `mainsidebar`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `produk`
@@ -722,7 +784,7 @@ ALTER TABLE `produkcategory`
 -- AUTO_INCREMENT for table `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -758,13 +820,19 @@ ALTER TABLE `showservice`
 -- AUTO_INCREMENT for table `sidebar`
 --
 ALTER TABLE `sidebar`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sidebarcategory`
 --
 ALTER TABLE `sidebarcategory`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `socialmedia`
+--
+ALTER TABLE `socialmedia`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `testimoni`
@@ -776,7 +844,7 @@ ALTER TABLE `testimoni`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `user login history`

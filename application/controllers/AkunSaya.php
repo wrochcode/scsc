@@ -40,6 +40,8 @@ class akunsaya extends CI_Controller
             $tempVar = $tempVar[0]["email"];
         endif;
         $data['email'] = $tempVar;
+        $tempVar = $this->scsc->getData("user",array('email'=>$this->session->userdata('email')));
+        $role = $tempVar[0]['role'];
 
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
         $tempVar = $tempVar[0]["value"];
@@ -49,17 +51,22 @@ class akunsaya extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['singkatan'] = $tempVar;
 
-        $tempVar = $this->scsc->getData("mainsidebar",array('status'=>1));
+        $tempVar = $this->scsc->getData("mainsidebar",array('status'=>1, 'role'=>7));
         $data['header'] = $tempVar;
 
-        $tempVar = $this->scsc->getAll("sidebarcategory");
+        $tempVar = $this->scsc->getData("sidebarcategory",array('role'=>7));
         $data['menu'] = $tempVar;
+
+        // var_dump($data['menu']);
 
         $tempVar = $this->scsc->getData("sidebar",array('status'=>1));
         $data['submenu'] = $tempVar;
         
-        $data['role'] = $this->session->userdata('role');
+        
         $data['active'] = 1;
+
+        // var_dump($data['header']);
+
         $this->load->view('akun/header', $data);
         $this->load->view('akun/top', $data);
         $this->load->view('akun/home');
