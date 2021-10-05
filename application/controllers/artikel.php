@@ -46,6 +46,10 @@ class artikel extends CI_Controller
         $tempVar = $this->scsc->getAll("homemenuabout");
         $data['submenu'] = $tempVar;
 
+        $tempVar = $this->scsc->getData("profil",array('name'=>'tentang'));
+        $tempVar = $tempVar[0]["value"];
+        $data['tentang'] = $tempVar;
+
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
         $tempVar = $tempVar[0]["value"];
         $data['logo'] = $tempVar;
@@ -152,6 +156,10 @@ class artikel extends CI_Controller
         
         $tempVar = $this->scsc->getAll("homemenuabout");
         $data['submenu'] = $tempVar;
+        
+        $tempVar = $this->scsc->getData("profil",array('name'=>'tentang'));
+        $tempVar = $tempVar[0]["value"];
+        $data['tentang'] = $tempVar;
 
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
         $tempVar = $tempVar[0]["value"];
@@ -259,6 +267,10 @@ class artikel extends CI_Controller
         
         $tempVar = $this->scsc->getAll("homemenuabout");
         $data['submenu'] = $tempVar;
+        
+        $tempVar = $this->scsc->getData("profil",array('name'=>'tentang'));
+        $tempVar = $tempVar[0]["value"];
+        $data['tentang'] = $tempVar;
 
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
         $tempVar = $tempVar[0]["value"];

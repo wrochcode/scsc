@@ -1,7 +1,7 @@
 
  
                     <div class="text-center mt-5 text-small">
-                        Copyright &copy; SCSC. Made with 💙 by Stisla
+                        Copyright &copy;<a href="<?= base_url();?>" class="text-dark">SCSC</a>. Made with 💙 by Stisla
                     <!-- <div class="mt-2">
                         <a href="#">Privacy Policy</a>
                         <div class="bullet"></div>

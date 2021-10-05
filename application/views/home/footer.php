@@ -37,14 +37,14 @@
               United States <br><br> -->
               <br><br>
               <strong>Phone:</strong> <?= $telp; ?><br>
-              <strong>Email:</strong> <?= $email; ?><br>
+              <strong>Email:</strong> <a href="mailto:<?= $email; ?>" target="_blank" class="text-white"><?= $email; ?></a><br>
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Tentang <?= $singkatan;?></h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <p><?= ucfirst($tentang);?></p>
             <div class="social-links mt-3">
               <a href="<?= $twitter; ?>" target="_blank" class="twitter"><i class="icofont-twitter"></i></a>
               <a href="<?= $facebook; ?>" target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
