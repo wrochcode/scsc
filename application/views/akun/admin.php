@@ -25,6 +25,7 @@
                                             <th scope="col">Email</th>
                                             <th scope="col">Posisi</th>
                                             <th scope="col">Status</th>
+                                            <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -36,6 +37,7 @@
                                                 <td><?= $user['email'];?></td>
                                                 <td>Article creator</td>
                                                 <td><?= $user['status'];?></td>
+                                                <td><button class="btn btn-success">Edit</button></td>
                                             </tr>
                                             <?php endforeach;?>
                                             <?php foreach($admin as $user):?>
@@ -45,6 +47,7 @@
                                                 <td><?= $user['email'];?></td>
                                                 <td>Kakak Admin</td>
                                                 <td><?= $user['status'];?></td>
+                                                <td><button class="btn btn-success">Edit</button></td>
                                             </tr>
                                             <?php endforeach;?>
                                         </tbody>

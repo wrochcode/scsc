@@ -15,6 +15,7 @@
                                 <?php if($queen['parent'] == $king['name']):
                                     // echo "<li>".$queen['id']."</li>"; 
                                         foreach($submenu as $jack):?>
+                                        <!-- <?php echo$jack['id'];?> -->
                                         <?php if($jack['id'] == $queen['child']): ?>
                                             <?php if($active == $jack['name']): ?>
                                                 <li class="active">

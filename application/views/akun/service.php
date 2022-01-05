@@ -11,7 +11,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="text-right">
-                                                <button class="btn btn-success">Tambah Teknisi</button>
+                                                <button class="btn btn-success">Tambah Menu Service</button>
                                             </div>
                                         </div>
                                     
@@ -22,18 +22,22 @@
                                             <tr>
                                             <th scope="col">No</th>
                                             <th scope="col">Nama</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Deskripsi</th>
+                                            <th scope="col">Waktu Estimasi</th>
+                                            <th scope="col">Harga</th>
+                                            <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php $nomor = 1;
-                                            foreach($teknisi as $user):?>
+                                            foreach($services as $sevice):?>
                                             <tr>
                                                 <th scope="row"><?= $nomor; $nomor++;?></th>
-                                                <td><?= $user['name'];?></td>
-                                                <td><?= $user['email'];?></td>
-                                                <td><?= $user['status'];?></td>
+                                                <td><?= $sevice['name'];?></td>
+                                                <td><?= $sevice['description'];?></td>
+                                                <td><?= $sevice['estimation'];?></td>
+                                                <td><?= $sevice['price'];?></td>
+                                                <td><button class="btn btn-success">Edit</button></td>
                                             </tr>
                                             <?php endforeach;?>
                                         </tbody>

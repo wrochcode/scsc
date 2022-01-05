@@ -11,7 +11,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="text-right">
-                                                <button class="btn btn-success">Tambah Teknisi</button>
+                                                <button class="btn btn-success">Tambah Produk Hardware</button>
                                             </div>
                                         </div>
                                     
@@ -22,19 +22,29 @@
                                             <tr>
                                             <th scope="col">No</th>
                                             <th scope="col">Nama</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Kategori</th>
+                                            <th scope="col">Deskripsi</th>
+                                            <th scope="col">Kondisi</th>
+                                            <th scope="col">Status Tampil</th>
+                                            <th scope="col">Jumlah Stok</th>
+                                            <th scope="col">Harga</th>
+                                            <th scope="col">Status Barang</th>
                                             <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php $nomor = 1;
-                                            foreach($teknisi as $user):?>
+                                            foreach($products as $sevice):?>
                                             <tr>
                                                 <th scope="row"><?= $nomor; $nomor++;?></th>
-                                                <td><?= $user['name'];?></td>
-                                                <td><?= $user['email'];?></td>
-                                                <td><?= $user['status'];?></td>
+                                                <td><?= $sevice['name'];?></td>
+                                                <td><?= $sevice['category'];?></td>
+                                                <td><?= $sevice['description'];?></td>
+                                                <td><?= $sevice['condition'];?></td>
+                                                <td><?= $sevice['ready'];?></td>
+                                                <td><?= $sevice['supply'];?></td>
+                                                <td><?= $sevice['price'];?></td>
+                                                <td><?= $sevice['status'];?></td>
                                                 <td><button class="btn btn-success">Edit</button></td>
                                             </tr>
                                             <?php endforeach;?>

@@ -436,8 +436,8 @@ class akunsaya extends CI_Controller
         $tempVar = $this->scsc->getData("sidebar",array('status'=>1));
         $data['submenu'] = $tempVar;
         
-        $tempVar = $this->scsc->getData("user",array('role'=>4));
-        $data['adminarticle'] = $tempVar;
+        $tempVar = $this->scsc->getData("service",array('status'=>1));
+        $data['services'] = $tempVar;
         
         $data['active'] = $data['title'];
 
@@ -507,7 +507,9 @@ class akunsaya extends CI_Controller
 
         $tempVar = $this->scsc->getData("sidebar",array('status'=>1));
         $data['submenu'] = $tempVar;
-        
+
+        $tempVar = $this->scsc->getData("produk",array('status'=>1));
+        $data['products'] = $tempVar;
         
         $data['active'] = $data['title'];
 
@@ -515,7 +517,7 @@ class akunsaya extends CI_Controller
 
         $this->load->view('akun/header', $data);
         $this->load->view('akun/top', $data);
-        $this->load->view('akun/home');
+        $this->load->view('akun/item');
         $this->load->view('akun/sidebar', $data);
         $this->load->view('akun/footer');
     }
