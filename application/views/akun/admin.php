@@ -52,6 +52,7 @@
                                             <?php endforeach;?>
                                         </tbody>
                                     </table>
+                                    Jumlah Total Admin : <?= $jumlahtotal;?>
                                 </div>
                                 <div class="card-footer text-right">
                                     <button class="btn btn-primary">Save Changes</button>

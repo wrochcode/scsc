@@ -281,6 +281,7 @@ class akunsaya extends CI_Controller
 
         $tempVar = $this->scsc->getData("user",array('role'=>5));
         $data['teknisi'] = $tempVar;
+        $data['jumlahtotal'] = count($tempVar);
 
         // $tempVar = $this->scsc->getData("sidebarcategory",array('role'=>$role));
         $tempVar = $this->scsc->getAll("sidebarcategory");
@@ -354,9 +355,11 @@ class akunsaya extends CI_Controller
 
         $tempVar = $this->scsc->getData("user",array('role'=>6));
         $data['admin'] = $tempVar;
+        $data['total1'] = count($tempVar);
 
         $tempVar = $this->scsc->getData("user",array('role'=>4));
         $data['adminarticle'] = $tempVar;
+        $data['jumlahtotal'] = count($tempVar) + $data['total1'];
 
         // $tempVar = $this->scsc->getData("sidebarcategory",array('role'=>$role));
         $tempVar = $this->scsc->getAll("sidebarcategory");
@@ -438,6 +441,7 @@ class akunsaya extends CI_Controller
         
         $tempVar = $this->scsc->getData("service",array('status'=>1));
         $data['services'] = $tempVar;
+        $data['jumlahtotal'] = count($tempVar);
         
         $data['active'] = $data['title'];
 
@@ -510,6 +514,7 @@ class akunsaya extends CI_Controller
 
         $tempVar = $this->scsc->getData("produk",array('status'=>1));
         $data['products'] = $tempVar;
+        $data['jumlahtotal'] = count($tempVar);
         
         $data['active'] = $data['title'];
 
@@ -580,14 +585,25 @@ class akunsaya extends CI_Controller
         $tempVar = $this->scsc->getData("sidebar",array('status'=>1));
         $data['submenu'] = $tempVar;
         
+        $tempVar = $this->scsc->getData("artikel",array('status'=>1));
+        $data['articles'] = $tempVar;
         
+        $jumlah_barang = count($data['articles']);
+        $data['countarticles'] = $jumlah_barang;
+        // echo $data['countarticles'];
+
+        $tempVar = $this->scsc->getAll("artikel_category");
+        $data['articlecategories'] = $tempVar;
+        $jumlah_barang = count($data['articlecategories']);
+        $data['countarticlecategories'] = $jumlah_barang;
+
         $data['active'] = $data['title'];
 
         // var_dump($data['header']);
 
         $this->load->view('akun/header', $data);
         $this->load->view('akun/top', $data);
-        $this->load->view('akun/home');
+        $this->load->view('akun/artikel', $data);
         $this->load->view('akun/sidebar', $data);
         $this->load->view('akun/footer');
     }

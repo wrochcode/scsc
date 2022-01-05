@@ -32,7 +32,8 @@
               <li><strong>Category</strong>: <?= $detail[0]['category'];?></li>
               <li><strong>Kondisi</strong>: <?= $detail[0]['condition'];?></li>
               <li><strong>Stok</strong>: <?= $detail[0]['supply'];?></li>
-              <li><strong>Harga</strong>: <a href="#"><?= $detail[0]['price'];?></a></li>
+              <?php $hasil_rupiah = "Rp " . number_format($detail[0]['price'],2,',','.');?>
+              <li><strong>Harga</strong>: <a href="#"><?= $hasil_rupiah;?></a></li>
             </ul>
 
             <p>

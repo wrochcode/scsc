@@ -40,6 +40,7 @@
                                             <?php endforeach;?>
                                         </tbody>
                                     </table>
+                                    Jumlah Total Teknisi : <?= $jumlahtotal;?>
                                 </div>
                                 <div class="card-footer text-right">
                                     <button class="btn btn-primary">Save Changes</button>
