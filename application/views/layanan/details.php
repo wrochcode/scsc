@@ -22,25 +22,21 @@
         <div class="row">
 
           <div class="col-lg-8">
-            <h2 class="portfolio-title">This is an example of portfolio detail</h2>
-            <div class="owl-carousel portfolio-details-carousel">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            </div>
+            <h2 class="portfolio-title"><?= $detail[0]['name']; ?></h2>
+            <img src="<?=base_url();?>assets/home/img/portfolio/<?= $detail[0]['photo'];?>" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-4 portfolio-info">
             <h3>Project information</h3>
             <ul>
-              <li><strong>Category</strong>: Web design</li>
-              <li><strong>Client</strong>: ASU Company</li>
-              <li><strong>Project date</strong>: 01 March, 2020</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+              <li><strong>Category</strong>: <?= $detail[0]['category'];?></li>
+              <li><strong>Kondisi</strong>: <?= $detail[0]['condition'];?></li>
+              <li><strong>Stok</strong>: <?= $detail[0]['supply'];?></li>
+              <li><strong>Harga</strong>: <a href="#"><?= $detail[0]['price'];?></a></li>
             </ul>
 
             <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+            <?= $detail[0]['description'];?>
             </p>
           </div>
 

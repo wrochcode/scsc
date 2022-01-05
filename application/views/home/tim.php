@@ -5,7 +5,7 @@
 
         <ol>
           <li><a href="<?= base_url();?>">Home</a></li>
-          <li><a href="<?= base_url();?>about_us" ><?= $link;?></a></li>
+          <li><a href="<?= base_url();?>tim" ><?= $link;?></a></li>
         </ol>
         <h2><?= $link;?></h2>
 

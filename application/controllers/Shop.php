@@ -115,7 +115,7 @@ class shop extends CI_Controller
         $this->load->view('home/footer', $data);
     }
 
-    public function detail(){
+    public function detail($detail){
         // home data
         $data['title'] = "SCSC - Shop - Detail";
         // var_dump();
@@ -198,8 +198,17 @@ class shop extends CI_Controller
         $data['linkedin'] = $tempVar;
 
         $tempVar = $this->scsc->getData("service",array('status'=>'1'));
-        // $tempVar = $tempVar[0]["value"];
         $data['services'] = $tempVar;
+        
+        // echo $detail;
+        $tempVar = $this->scsc->getData("produk",array('link'=>$detail));
+        if($tempVar[0]['condition'] == 1):
+            $tempVar[0]['condition'] = "Baru";
+        else:
+            $tempVar[0]['condition'] = "Bekas";
+        endif;
+        $data['detail'] = $tempVar;
+        // var_dump($data['detail']);
 
         // end home data
 
@@ -212,7 +221,7 @@ class shop extends CI_Controller
 
         $this->load->view('home/header', $data);
         $this->load->view('home/top', $data);
-        $this->load->view('layanan/details');
+        $this->load->view('layanan/details', $data);
         $this->load->view('home/footer', $data);
     }
 

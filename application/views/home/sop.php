@@ -24,7 +24,7 @@
           <article class="entry">
 
             <h2 class="entry-title">
-                <?= strtoupper($description." ".$singkatan);?>
+                <?= strtoupper($description);?>
                 <!-- <?= ucwords(strtolower($description." ".$singkatan));?> -->
             </h2>
 
