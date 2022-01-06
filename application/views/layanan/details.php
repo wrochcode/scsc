@@ -45,7 +45,11 @@
                 <div class="form-group mt-3">
                     <input id="catatan" type="text" placeholder="Masukkan catatan jika diperlukan" class="form-control" name="jumlah" tabindex="2" >
                 </div>
-              <div class="text-left"><button type="submit">Kirim pesanan</button></div>
+                <?php if($verified == 0):?>
+                  <a href="<?= base_url()?>login;?>"><button type="submit">Masukkan Keranjang</button></a>
+                <?php else:?>
+                  <div class="text-left"><button type="submit">Masukkan Keranjang</button></div>
+                <?php endif;?>
             </form>
           </div>
 

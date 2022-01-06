@@ -212,10 +212,12 @@ class shop extends CI_Controller
             $tempVar[0]['condition'] = "Bekas";
         endif;
         $data['detail'] = $tempVar;
-        // var_dump($data['detail']);
-
-        // end home data
-
+        
+        if($this->session->userdata('status') == 'login'):
+            $data['verified'] = 1;
+        else:
+            $data['verified'] = 0;
+        endif;            
 
         
         $data['link'] = "Shop";
