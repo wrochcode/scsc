@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2022 at 07:21 PM
+-- Generation Time: Jan 06, 2022 at 04:20 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.14
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,16 +57,17 @@ INSERT INTO `artikel` (`id`, `title`, `slug`, `picture`, `author`, `text`, `cate
 CREATE TABLE `artikel_category` (
   `id` int(191) NOT NULL,
   `name` varchar(191) NOT NULL,
-  `slug` varchar(191) NOT NULL
+  `slug` varchar(191) NOT NULL,
+  `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `artikel_category`
 --
 
-INSERT INTO `artikel_category` (`id`, `name`, `slug`) VALUES
-(1, 'Tips and Trik', 'Tips-and-Trik'),
-(2, 'Update Teknologi', 'Update-Teknologi');
+INSERT INTO `artikel_category` (`id`, `name`, `slug`, `status`) VALUES
+(1, 'Tips and Trik', 'Tips-and-Trik', 1),
+(2, 'Update Teknologi', 'Update-Teknologi', 1);
 
 -- --------------------------------------------------------
 
@@ -307,11 +308,12 @@ INSERT INTO `profil` (`id`, `name`, `value`, `description`) VALUES
 (10, 'skype', '#', 'social media skype official'),
 (11, 'linkedin', 'https://www.linkedin.com/in/wahyu-rochman-bantoro/', 'social media linkedin official'),
 (12, 'misi', 'Untuk berkembang jangan ada halangan', 'misi dari perusahaan'),
-(13, 'visi', 'memeberikan kemudahan dalam memperbaiki perangkat komputer di era digitalisasi ini', 'visi dibentuknya perusahaan'),
+(13, 'visi', 'Memberikan kemudahan dalam memperbaiki perangkat komputer di era digitalisasi ini', 'visi dibentuknya perusahaan'),
 (14, 'Tentang', 'Jasa service ini didirikan oleh mahasiswa udinus dengan mata kuliah technopreneur dengan upaya mendapat nilai paling baik diantara kelompok lain!', 'Tentang perusahaan'),
 (15, 'photo', 'main-photo.jpg', 'photo orang service'),
 (16, 'sop', '1.Pengguna dengan ini menyatakan bahwa pengguna adalah orang yang cakap dan mampu untuk mengikatkan dirinya dalam sebuah perjanjian yang sah menurut hukum.<br>2.Tokopedia tidak memungut biaya pendaftaran kepada Pengguna.', 'Standard Operating Procedure Perusahaan'),
-(17, 'FAQ', 'ya begituuu', 'Pertanyaan Sering Ditanyakan');
+(17, 'FAQ', 'ya begituuu', 'Pertanyaan Sering Ditanyakan'),
+(18, 'slogan', 'Memberikan kemudahan dalam memperbaiki perangkat komputer di era digitalisasi ini', 'Muncul pada home pertama');
 
 -- --------------------------------------------------------
 
@@ -809,7 +811,7 @@ ALTER TABLE `produkcategory`
 -- AUTO_INCREMENT for table `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `role`

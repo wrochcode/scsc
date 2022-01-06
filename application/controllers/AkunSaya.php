@@ -678,6 +678,16 @@ class akunsaya extends CI_Controller
         $this->load->view('akun/footer');
     }
 
+    public function makeinvoice()
+    {
+        $jumlah = $this->input->post('jumlah');
+        $catatan = $this->input->post('catatan');
+        $dataPenunjuk = $this->session->userdata('email');
+        $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
+        $user = $tempVar[0]['name'];
+        $status = "Belum dikonfirmasi";
+    }
+
     public function transaksi()
     {
         $data['title'] = "Transaksi";

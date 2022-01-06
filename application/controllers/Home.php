@@ -49,6 +49,10 @@ class home extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['tentang'] = $tempVar;
 
+        $tempVar = $this->scsc->getData("profil",array('name'=>'slogan'));
+        $tempVar = $tempVar[0]["value"];
+        $data['slogan'] = $tempVar;
+
         $tempVar = $this->scsc->getData("profil",array('name'=>'logo'));
         $tempVar = $tempVar[0]["value"];
         $data['logo'] = $tempVar;

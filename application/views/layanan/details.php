@@ -27,18 +27,26 @@
           </div>
 
           <div class="col-lg-4 portfolio-info">
-            <h3>Project information</h3>
+            <h3>Product information</h3>
             <ul>
               <li><strong>Category</strong>: <?= $detail[0]['category'];?></li>
               <li><strong>Kondisi</strong>: <?= $detail[0]['condition'];?></li>
               <li><strong>Stok</strong>: <?= $detail[0]['supply'];?></li>
               <?php $hasil_rupiah = "Rp " . number_format($detail[0]['price'],2,',','.');?>
-              <li><strong>Harga</strong>: <a href="#"><?= $hasil_rupiah;?></a></li>
+              <li><strong>Harga</strong>: <?= $hasil_rupiah;?></li>
+              <li><strong>Deskripsi</strong>: <p><?= $detail[0]['description'];?></p></li>
             </ul>
-
-            <p>
-            <?= $detail[0]['description'];?>
-            </p>
+            <br><br>
+            <strong class="mt-4">Pesan disini</strong>
+            <form action="<?php echo base_url(); ?>AkunSaya/makeinvoice" method="POST" role="form" >
+                <div class="form-group mt-3">
+                    <input id="jumlah" type="number" placeholder="Masukkan jumlah pesanan anda" class="form-control" name="jumlah" tabindex="1" required>
+                </div>
+                <div class="form-group mt-3">
+                    <input id="catatan" type="text" placeholder="Masukkan catatan jika diperlukan" class="form-control" name="jumlah" tabindex="2" >
+                </div>
+              <div class="text-left"><button type="submit">Kirim pesanan</button></div>
+            </form>
           </div>
 
         </div>

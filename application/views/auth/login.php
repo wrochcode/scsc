@@ -21,7 +21,7 @@
 
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                        <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
+                        <input type="checkbox" name="remember" class="custom-control-input" tabindex="5" id="remember-me">
                         <label class="custom-control-label" for="remember-me">Remember Me</label>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                         <a href="auth-forgot-password.html" class="float-left mt-3">
                             Forgot Password?
                         </a>
-                        <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">
+                        <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="6">
                             Login
                         </button>
                     </div>
