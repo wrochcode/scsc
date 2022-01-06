@@ -6,7 +6,6 @@ class keranjang extends CI_Controller
     public function index()
     {
         $data['title'] = "SCSC";
-        // var_dump();
         $dataPenunjuk = $this->session->userdata('email');
         
         if(isset($dataPenunjuk)):
@@ -92,17 +91,28 @@ class keranjang extends CI_Controller
         $tempVar = $this->scsc->getData("profil",array('name'=>'linkedin'));
         $tempVar = $tempVar[0]["value"];
         $data['linkedin'] = $tempVar;
-
+        
         $tempVar = $this->scsc->getAll("corefitur");
         $data['mainfitur'] = $tempVar;
-
+        
         $tempVar = $this->scsc->getData("service",array('status'=>'1'));
-        // $tempVar = $tempVar[0]["value"];
         $data['services'] = $tempVar;
+        
+        $tempVar = $this->scsc->getData("profil",array('name'=>'adminkonfirmasi'));
+        $tempVar = $tempVar[0]["value"];
+        $data['adminkonfirmasi'] = $tempVar;
 
+        $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
+        $namauser = $tempVar[0]['name'];
+        $tempVar = $this->scsc->getData("invoiceproduk",array('name'=>$namauser, 'status'=>'Belum dikonfirmasi'));
+        $data['keranjang'] = $tempVar;
+
+        // var_dump($data['keranjang']);
+        
         // $tempVar = $this->scsc->getFew("testimoni", "ASC", 3);
         // $data['testimoni'] = $tempVar;
         
+        $data['link'] = "Keranjangku";
         $data['active'] = 6;
         $data['dd'] = 2;
         $data['dda'] = 0;

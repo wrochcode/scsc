@@ -34,4 +34,9 @@ class scsc extends CI_Model
     {
         return $this->db->insert("newsletter", $email);
     }
+
+    public function inputData($things, $database)
+    {
+        return $this->db->insert($database, $things);
+    }
 }

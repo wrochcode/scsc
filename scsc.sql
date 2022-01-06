@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2022 at 04:20 AM
+-- Generation Time: Jan 06, 2022 at 10:44 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -114,7 +114,8 @@ INSERT INTO `homemenu` (`id`, `name`, `value`, `status`) VALUES
 (3, 'Service', 'Service', 1),
 (4, 'Shop', 'Shop', 1),
 (5, 'Artikel', 'Artikel', 1),
-(6, 'Akunsaya', 'Akunsaya', 1);
+(6, 'Keranjang', 'Keranjang', 1),
+(9, 'Akunsaya', 'Akunsaya', 1);
 
 -- --------------------------------------------------------
 
@@ -138,6 +139,33 @@ INSERT INTO `homemenuabout` (`id`, `name`, `value`, `status`) VALUES
 (2, 'tim', 'Anggota', 1),
 (3, 'sop', 'SOP', 1),
 (4, 'faq', 'FAQ', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoiceproduk`
+--
+
+CREATE TABLE `invoiceproduk` (
+  `id` int(191) NOT NULL,
+  `product` varchar(191) NOT NULL,
+  `photo` varchar(191) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `address` text NOT NULL,
+  `jumlah` varchar(191) NOT NULL,
+  `catatan` text NOT NULL,
+  `kategori` varchar(191) NOT NULL,
+  `status` varchar(191) NOT NULL,
+  `kurir` varchar(191) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `invoiceproduk`
+--
+
+INSERT INTO `invoiceproduk` (`id`, `product`, `photo`, `name`, `address`, `jumlah`, `catatan`, `kategori`, `status`, `kurir`, `price`) VALUES
+(1, 'Router TP-Link 200Mbps', 'portfolio-3.jpg', 'Rahim kun', 'Rahim kun', '1', '-', 'keranjang', 'Belum dikonfirmasi', ' ', 183000);
 
 -- --------------------------------------------------------
 
@@ -313,7 +341,8 @@ INSERT INTO `profil` (`id`, `name`, `value`, `description`) VALUES
 (15, 'photo', 'main-photo.jpg', 'photo orang service'),
 (16, 'sop', '1.Pengguna dengan ini menyatakan bahwa pengguna adalah orang yang cakap dan mampu untuk mengikatkan dirinya dalam sebuah perjanjian yang sah menurut hukum.<br>2.Tokopedia tidak memungut biaya pendaftaran kepada Pengguna.', 'Standard Operating Procedure Perusahaan'),
 (17, 'FAQ', 'ya begituuu', 'Pertanyaan Sering Ditanyakan'),
-(18, 'slogan', 'Memberikan kemudahan dalam memperbaiki perangkat komputer di era digitalisasi ini', 'Muncul pada home pertama');
+(18, 'slogan', 'Memberikan kemudahan dalam memperbaiki perangkat komputer di era digitalisasi ini', 'Muncul pada home pertama'),
+(19, 'adminkonfirmasi', '+62895326920220', 'admin konfirmasi pembayaran');
 
 -- --------------------------------------------------------
 
@@ -636,6 +665,12 @@ ALTER TABLE `homemenuabout`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `invoiceproduk`
+--
+ALTER TABLE `invoiceproduk`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
@@ -769,13 +804,19 @@ ALTER TABLE `corefitur`
 -- AUTO_INCREMENT for table `homemenu`
 --
 ALTER TABLE `homemenu`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `homemenuabout`
 --
 ALTER TABLE `homemenuabout`
   MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `invoiceproduk`
+--
+ALTER TABLE `invoiceproduk`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `item`
@@ -811,7 +852,7 @@ ALTER TABLE `produkcategory`
 -- AUTO_INCREMENT for table `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `role`

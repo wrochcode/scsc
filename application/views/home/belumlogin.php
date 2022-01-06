@@ -13,7 +13,7 @@
           <h2>Login untuk melihat keranjang</h2>
         </div>
         <div class="section-title" data-aos="fade-up">
-          <a href="<?= base_url()?>login;?>"><button class="btn-success">Login</button></a>
+          <a href="<?= base_url()?>login"><button class="btn-success">Login</button></a>
         </div>
 
       </div>
