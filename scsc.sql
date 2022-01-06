@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2022 at 10:44 AM
+-- Generation Time: Jan 06, 2022 at 03:58 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -165,7 +165,8 @@ CREATE TABLE `invoiceproduk` (
 --
 
 INSERT INTO `invoiceproduk` (`id`, `product`, `photo`, `name`, `address`, `jumlah`, `catatan`, `kategori`, `status`, `kurir`, `price`) VALUES
-(1, 'Router TP-Link 200Mbps', 'portfolio-3.jpg', 'Rahim kun', 'Rahim kun', '1', '-', 'keranjang', 'Belum dikonfirmasi', ' ', 183000);
+(1, 'Router TP-Link 200Mbps', 'portfolio-3.jpg', 'Rahim kun', 'Rahim kun', '1', '-', 'keranjang', 'Belum dikonfirmasi', ' ', 183000),
+(2, 'Router TP-Link 300Mbps', 'portfolio-2.jpg', '', '', '10', '-', 'keranjang', 'Belum dikonfirmasi', ' ', 1330000);
 
 -- --------------------------------------------------------
 
@@ -244,11 +245,11 @@ INSERT INTO `mainsidebar` (`id`, `name`, `role`, `status`) VALUES
 (22, 'Transaksi', 6, 1),
 (23, 'Transaksi', 7, 1),
 (24, 'Refreshing', 1, 0),
-(25, 'Refreshing', 2, 1),
-(26, 'Refreshing', 3, 1),
-(27, 'Refreshing', 4, 1),
-(28, 'Refreshing', 5, 6),
-(29, 'Refreshing', 7, 1),
+(25, 'Refreshing', 2, 0),
+(26, 'Refreshing', 3, 0),
+(27, 'Refreshing', 4, 0),
+(28, 'Refreshing', 5, 0),
+(29, 'Refreshing', 7, 0),
 (30, 'Saran dan Kritik', 1, 1),
 (31, 'Saran dan Kritik', 2, 1),
 (32, 'Saran dan Kritik', 3, 1),
@@ -602,7 +603,8 @@ INSERT INTO `user` (`id`, `name`, `photo`, `email`, `telp`, `birthday`, `jobs`, 
 (24, 'Rahim kun', '', '111201811255@mhs.dinus.ac.id', '', '', '', '', '', 1, 'Aktif', 1, 'https://twitter.com/GoziNasuka', 'https://www.instagram.com/gozinasuka/', 'https://www.facebook.com/gozi.nasuka', '#', '543378fb36a83810ded2d725f2b6c883'),
 (25, 'Komting cacad sama', '', '111201811215@mhs.dinus.ac.id', '', '', '', '', '', 3, 'Aktif', 1, '#', 'https://www.instagram.com/rivan_istyajie/', 'https://www.facebook.com/bagus.duemaks', '#', 'd81d658f7fb3fca03ea5e74f787f1f51'),
 (26, 'Sasuke', '', 'sasuke@sasuke.com', '', '', '', '', '', 4, 'Aktif', 1, '', '', '', '', '93207db25ad357906be2fd0c3f65f3dc'),
-(27, 'sakura', '', 'sakura@sakura.com', '', '', '', '', '', 4, 'Aktif', 1, '', '', '', '', '149afd631693c895f81e508eb5aaef37');
+(27, 'sakura', '', 'sakura@sakura.com', '', '', '', '', '', 4, 'Aktif', 1, '', '', '', '', '149afd631693c895f81e508eb5aaef37'),
+(28, '', '', 'coba1@coba.com', '', '', '', '', '', 7, '', 0, '', '', '', '', 'c3ec0f7b054e729c5a716c8125839829');
 
 -- --------------------------------------------------------
 
@@ -816,7 +818,7 @@ ALTER TABLE `homemenuabout`
 -- AUTO_INCREMENT for table `invoiceproduk`
 --
 ALTER TABLE `invoiceproduk`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `item`
@@ -912,7 +914,7 @@ ALTER TABLE `testimoni`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `user login history`
