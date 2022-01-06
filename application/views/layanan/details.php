@@ -39,7 +39,7 @@
             <br><br>
             <strong class="mt-4">Pesan disini</strong>
             <?php echo $this->session->flashdata('message'); ?>
-            <form action="<?php echo base_url(); ?>AkunSaya/makeinvoice" method="POST" role="form" >
+            <form action="<?php echo base_url(); ?>keranjang/makeinvoice" method="POST" role="form" >
               <input id="link" type="hidden"class="form-control" name="link" value="<?= $detail[0]['link']?>" tabindex="0" required>
               <div class="form-group mt-3">
                   <input id="jumlah" type="number" placeholder="Masukkan jumlah pesanan anda" class="form-control" name="jumlah" tabindex="1" required>

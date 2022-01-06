@@ -7,7 +7,7 @@
                             <form method="post" class="needs-validation" novalidate="">
                                 <div class="card-header justify-content-between">
                                         <div class="col-4">
-                                            <h4>Teknisi</h4>
+                                            <h4>Service</h4>
                                         </div>
                                         <div class="col-4">
                                             <div class="text-right">
@@ -29,6 +29,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php if(count($services) == 0):?>
+                                                <tr>
+                                                    <td colspan="6" class="text-center">
+                                                        No Data
+                                                    </td>
+                                                </tr>
+                                            <?php endif;?>
                                             <?php $nomor = 1;
                                             foreach($services as $sevice):?>
                                             <tr>
@@ -44,9 +51,9 @@
                                     </table>
                                     Jumlah Total Service : <?= $jumlahtotal;?>
                                 </div>
-                                <div class="card-footer text-right">
+                                <!-- <div class="card-footer text-right">
                                     <button class="btn btn-primary">Save Changes</button>
-                                </div>
+                                </div> -->
                             </form>
                             </div>
                         </div>

@@ -7,7 +7,7 @@
                             <form method="post" class="needs-validation" novalidate="">
                                 <div class="card-header justify-content-between">
                                         <div class="col-4">
-                                            <h4>Admin</h4>
+                                            <h4>Artikel</h4>
                                         </div>
                                         <div class="col-4">
                                             <div class="text-right">
@@ -40,9 +40,9 @@
                                     </table>
                                     Jumlah Total Artikel : <?= $countarticlecategories;?>
                                 </div>
-                                <div class="card-footer text-right">
+                                <!-- <div class="card-footer text-right">
                                     <button class="btn btn-primary">Save Changes</button>
-                                </div>
+                                </div> -->
                             </form>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="text-right">
-                                                <button class="btn btn-success">Tambah Artikel</button>
+                                                <a class="btn btn-success" href="<?php echo base_url(); ?>akunsaya/tambahartikel">Tambah Artikel</a>
                                             </div>
                                         </div>
                                     
@@ -88,9 +88,9 @@
                                     </table>
                                     Jumlah Total Artikel : <?= $countarticles;?>
                                 </div>
-                                <div class="card-footer text-right">
+                                <!-- <div class="card-footer text-right">
                                     <button class="btn btn-primary">Save Changes</button>
-                                </div>
+                                </div> -->
                             </form>
                             </div>
                         </div>

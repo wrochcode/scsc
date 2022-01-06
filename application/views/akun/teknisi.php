@@ -28,6 +28,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php if(count($teknisi) == 0):?>
+                                                <tr>
+                                                    <td colspan="5" class="text-center">
+                                                        No Data
+                                                    </td>
+                                                </tr>
+                                            <?php endif;?>
                                             <?php $nomor = 1;
                                             foreach($teknisi as $user):?>
                                             <tr>
@@ -42,9 +49,9 @@
                                     </table>
                                     Jumlah Total Teknisi : <?= $jumlahtotal;?>
                                 </div>
-                                <div class="card-footer text-right">
+                                <!-- <div class="card-footer text-right">
                                     <button class="btn btn-primary">Save Changes</button>
-                                </div>
+                                </div> -->
                             </form>
                             </div>
                         </div>

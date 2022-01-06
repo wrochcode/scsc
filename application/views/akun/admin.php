@@ -29,6 +29,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php if(count($adminarticle) == 0 && count($admin) == 0 ):?>
+                                                <tr>
+                                                    <td colspan="6" class="text-center">
+                                                        No Data
+                                                    </td>
+                                                </tr>
+                                            <?php endif;?>
                                             <?php $nomor = 1;
                                             foreach($adminarticle as $user):?>
                                             <tr>
@@ -54,9 +61,9 @@
                                     </table>
                                     Jumlah Total Admin : <?= $jumlahtotal;?>
                                 </div>
-                                <div class="card-footer text-right">
+                                <!-- <div class="card-footer text-right">
                                     <button class="btn btn-primary">Save Changes</button>
-                                </div>
+                                </div> -->
                             </form>
                             </div>
                         </div>

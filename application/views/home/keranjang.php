@@ -19,8 +19,8 @@
             <?php $a=1 ;
             foreach($keranjang as $barang):?>
             <div class="row">
-                <div class="col-12  text-left">
-                    <div class="row col-12 info-box mb-4">
+                <div class="col-12 text-left">
+                    <div class="row info-box mb-4">
                         <div class="col-3">
                             <img src="<?=base_url();?>assets/home/img/portfolio/<?= $barang['photo'];?>" class="img-fluid" alt="">
                         </div>

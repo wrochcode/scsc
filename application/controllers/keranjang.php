@@ -102,10 +102,12 @@ class keranjang extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['adminkonfirmasi'] = $tempVar;
 
-        $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
-        $namauser = $tempVar[0]['name'];
-        $tempVar = $this->scsc->getData("invoiceproduk",array('name'=>$namauser, 'status'=>'Belum dikonfirmasi'));
-        $data['keranjang'] = $tempVar;
+        if($this->session->userdata('status') == 'login'):
+            $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
+            $namauser = $tempVar[0]['name'];
+            $tempVar = $this->scsc->getData("invoiceproduk",array('name'=>$namauser, 'kategori' => 'keranjang'));
+            $data['keranjang'] = $tempVar;
+        endif;
 
         // var_dump($data['keranjang']);
         
@@ -125,5 +127,48 @@ class keranjang extends CI_Controller
             $this->load->view('home/belumlogin');
         endif;
         $this->load->view('home/footer', $data);
+    }
+
+    public function makeinvoice()
+    {
+        $dataPenunjuk = $this->session->userdata('email');
+        $tempVar = $this->scsc->getData("user",array('email'=>$dataPenunjuk));
+        $user = $tempVar[0]['name'];
+        $address = $tempVar[0]['name'];
+        // var_dump($user);
+        $jumlah = $this->input->post('jumlah');
+        $catatan = $this->input->post('catatan');
+        $link = $this->input->post('link');
+        $tempVar = $this->scsc->getData("produk",array('link'=>$link));
+        $produk = $tempVar[0]['name'];
+        $harga = $tempVar[0]['price'];
+        $photo = $tempVar[0]['photo'];
+        $harga= $harga * $jumlah;
+        $tempVar = $tempVar[0]['supply'];
+        // var_dump($jumlah);
+        if($jumlah>$tempVar):
+            // echo 'haii';
+            $this->session->set_flashdata('message', '<div class="alert alert-danger text-center">Stok orderan terbatas, mohon kurangi jumlah pesanan anda</div>');
+            redirect('Shop/detail/'.$link);
+        else:
+            $status = "Belum dikonfirmasi";
+            if($catatan == NULL):
+                $catatan = "-";
+            endif;
+            $submit_data = array(
+                'product' => $produk,
+                'name' => $user,
+                'photo' => $photo,
+                'address' => $address,
+                'jumlah' => $jumlah,
+                'catatan' => $catatan,
+                'kategori' => "keranjang",
+                'status' => $status,
+                'kurir' => " ",
+                'price' => $harga);
+            $this->scsc->inputData($submit_data, "invoiceproduk");
+            $this->session->set_flashdata('message', '<div class="alert alert-success text-center">Pesanan anda Sudah masuk keranjang, silahkan lakukan pembayaran dan jangan lupa konfirmai ke Admin ya..</div>');
+            redirect('Shop/detail/'.$link);
+        endif;
     }
 }

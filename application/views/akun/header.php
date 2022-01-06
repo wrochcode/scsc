@@ -21,5 +21,9 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/login/css/style.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/login/css/components.css">
+
+  <!-- CKEDITOR -->
+  <script src="<?= base_url(); ?>ckeditor/ckeditor.js"></script>
+	<script src="<?= base_url(); ?>ckeditor/samples/js/sample.js"></script>
 </head>
 
