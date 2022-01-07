@@ -684,7 +684,7 @@ class akunsaya extends CI_Controller
 
         $this->load->view('akun/header', $data);
         $this->load->view('akun/top', $data);
-        $this->load->view('akun/tambahartikel', $data);
+        $this->load->view('akun/formtambahartikel', $data);
         $this->load->view('akun/sidebar', $data);
         $this->load->view('akun/footer');
     }
